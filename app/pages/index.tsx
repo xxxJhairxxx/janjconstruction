@@ -1,5 +1,3 @@
-
-
 // interface HomeProps {
 //   home: HomeData
 // }
@@ -7,9 +5,11 @@
 import { Title } from "@atoms/Title";
 
 export default function Index() {
-  return <main>
-    <Title>hello</Title>
-  </main>
+  return (
+    <main>
+      <h1>hello sape</h1>
+    </main>
+  )
 }
 
 // export const getStaticProps: GetStaticProps = async () => {
