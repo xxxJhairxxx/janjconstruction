@@ -1,13 +1,13 @@
-
-
 // interface HomeProps {
 //   home: HomeData
 // }
 
 export default function Index() {
-  return <main>
-    <h1>hello</h1>
-  </main>
+  return (
+    <main>
+      <h1>hello sape</h1>
+    </main>
+  )
 }
 
 // export const getStaticProps: GetStaticProps = async () => {
