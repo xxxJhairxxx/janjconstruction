@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "multilanguages",
+  "info": {
+    "singularName": "multilanguage",
+    "pluralName": "multilanguages",
+    "displayName": "Multilanguage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "menu": {
+      "displayName": "menu",
+      "type": "component",
+      "repeatable": true,
+      "component": "menus.menu"
+    },
+    "labels_buttons": {
+      "displayName": "labels button",
+      "type": "component",
+      "repeatable": false,
+      "component": "label-buttons.labels-button"
+    },
+    "lbl_service": {
+      "type": "string"
+    }
+  }
+}

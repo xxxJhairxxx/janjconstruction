@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_cards_services_cards",
+  "info": {
+    "displayName": "services cards"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

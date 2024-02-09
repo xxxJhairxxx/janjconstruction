@@ -1,0 +1,45 @@
+{
+  "kind": "singleType",
+  "collectionName": "homes",
+  "info": {
+    "singularName": "home",
+    "pluralName": "homes",
+    "displayName": "Home",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "home_banner": {
+      "displayName": "Home Sections",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-sections.home-sections"
+    },
+    "home_our_company": {
+      "displayName": "home_company",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-sections.home-company"
+    },
+    "home_our_services": {
+      "displayName": "home_our_services",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-sections.home-our-services"
+    },
+    "home_middle": {
+      "displayName": "home_middle",
+      "type": "component",
+      "repeatable": false,
+      "component": "home-sections.home-middle"
+    },
+    "home_we_work": {
+      "type": "component",
+      "repeatable": false,
+      "component": "home-sections.home-we-work"
+    }
+  }
+}

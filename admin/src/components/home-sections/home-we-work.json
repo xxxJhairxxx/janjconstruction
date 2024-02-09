@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_home_sections_home_we_works",
+  "info": {
+    "displayName": "Home_we_work",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  }
+}

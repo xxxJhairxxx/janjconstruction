@@ -1,0 +1,61 @@
+{
+  "kind": "singleType",
+  "collectionName": "generals",
+  "info": {
+    "singularName": "general",
+    "pluralName": "generals",
+    "displayName": "General"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "address": {
+      "type": "string"
+    },
+    "adress_url": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "social_networks": {
+      "displayName": "Social networks",
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.social-networks"
+    },
+    "facebook_id": {
+      "type": "string"
+    },
+    "pixel_facebook": {
+      "type": "string"
+    },
+    "tag_manager": {
+      "type": "string"
+    },
+    "google_analytics": {
+      "type": "string"
+    },
+    "yandex_code": {
+      "type": "string"
+    },
+    "google_adds": {
+      "type": "string"
+    }
+  }
+}

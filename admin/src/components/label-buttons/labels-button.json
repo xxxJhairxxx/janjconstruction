@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_label_buttons_labels_buttons",
+  "info": {
+    "displayName": "labels button"
+  },
+  "options": {},
+  "attributes": {
+    "lbl_contact_us": {
+      "type": "string"
+    },
+    "lbl_read_more": {
+      "type": "string"
+    },
+    "lbl_send": {
+      "type": "string"
+    },
+    "lbl_see_more": {
+      "type": "string"
+    }
+  }
+}
