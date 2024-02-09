@@ -1,0 +1,80 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('/fonts/icomoon.eot?501tyu');
+  src: url('/fonts/icomoon.eot?501tyu#iefix') format('embedded-opentype'),
+    url('/fonts/icomoon.ttf?501tyu') format('truetype'),
+    url('/fonts/icomoon.woff?501tyu') format('woff'),
+    url('/fonts/icomoon.svg?501tyu#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-oval:before {
+  content: '\e909';
+}
+/* .icon-facebook-border:before {
+    content: "\e900";
+} */
+.icon-marks:before {
+  content: '\e901';
+}
+.icon-arrow:before {
+  content: '\e902';
+}
+/* .icon-instagram:before {
+    content: "\e903";
+}
+.icon-youtube-border .path1:before {
+    content: "\e904";
+    color: rgb(255, 255, 255);
+}
+.icon-youtube-border .path2:before {
+    content: "\e905";
+    margin-left: -1.2998046875em;
+    color: rgb(26, 44, 33);
+}
+.icon-youtube-border .path3:before {
+    content: "\e906";
+    margin-left: -1.2998046875em;
+    color: rgb(26, 44, 33);
+}
+.icon-youtube-border .path4:before {
+    content: "\e907";
+    margin-left: -1.2998046875em;
+    color: none;
+}
+.icon-facebook:before {
+    content: "\e908";
+}
+.icon-youtube .path1:before {
+    content: "\e90a";
+    color: rgb(26, 44, 33);
+}
+.icon-youtube .path2:before {
+    content: "\e90b";
+    margin-left: -1.4541015625em;
+    color: rgb(255, 255, 255);
+} */
+.icon-check:before {
+  content: '\e90c';
+}
+.icon-phone:before {
+  content: '\e90d';
+}
