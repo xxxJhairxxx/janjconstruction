@@ -1,33 +1,133 @@
+/**
+ * @format
+ * @import './atoms';
+ * @import './ui';
+ * @import './organisms';
+ * @import './molecules';
+ * @import './pageslocals';
+ * @import 'container.css';
+
+ * @import 'icons.css';
+ */
+
+@import 'scale.css';
+@import 'icons.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+	@apply font-primary;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+	font-size: 62.5%;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+	p {
+		font-size: 1.9rem;
+		@screen laptop {
+      font-size: max(1.4rem, calc(5rem * var(--scale)));
+		}
+	}
+
+  h1,h2,h3,h4,h5{
+
+  }
+
+
+
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+textarea {
+	resize: none;
 }
+
+textarea,
+select,
+input {
+	@apply border-none bg-none;
+	&:focus {
+		outline: none;
+	}
+}
+
+.main-page {
+	animation-name: fadeIn;
+	animation-duration: 0.6s;
+	animation-timing-function: ease-in;
+	background-image: var(--bg-img);
+}
+
+p,
+li {
+	@apply leading-[1.5] text-[1.4rem] font-[300] text-[#606060];
+
+	@screen laptop {
+		font-size: calc(1.6rem * var(--scale));
+	}
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* .error-group {
+  @apply text-red-500 absolute top-[50%] right-[1rem] opacity-0 leading-[1] text-[1.5rem];
+  transform: translateY(-50%);
+  transition: opacity 350ms ease-in-out;
+  filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.15));
+
+  i {
+    @apply text-red-500;
+  } */
+
+/* span {
+    @apply absolute font-primary w-max right-[-0.7rem] top-[-4rem] bg-white px-[.8rem] py-[.8rem] text-[1.3rem];
+    @apply rounded-[.5rem];
+
+    @screen laptop {
+      font-size: calc(1.3rem * var(--scale));
+    }
+
+    &::after {
+      content: '';
+      @apply absolute top-[100%] right-[1rem] ml-[-5px];
+      border-width: 5px;
+      border-style: solid;
+      border-color: #fff transparent transparent transparent;
+    }
+  }
+  &.error {
+    @apply opacity-100;
+  }
+} */
+
+/* .error-captcha {
+  @apply absolute top-[-2rem] left-[1.2rem] !text-red-500 leading-[1] text-[1.5rem] bg-white p-[.8rem];
+  @apply rounded-[0.5rem];
+  filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.15));
+
+  &::after {
+    content: '';
+    @apply absolute top-[100%] left-[1.5rem] ml-[-5px];
+    border-width: 5px;
+    border-style: solid;
+    border-color: #fff transparent transparent transparent;
+  }
+  span {
+    @apply flex font-primary items-center gap-[.5rem] text-[1.3rem];
+    white-space: nowrap;
+
+    @screen laptop {
+      font-size: calc(1.2rem * var(--scale));
+    }
+  }
+} */

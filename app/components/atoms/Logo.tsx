@@ -21,7 +21,7 @@ export const Logo: FC<LogoProps> = ({ className }) => {
             src={general.logo.url}
             width={general.logo.width}
             height={general.logo.height}
-            alt={'Credit Experts'}
+            alt={""}
           ></Image>
         )}
       </picture>

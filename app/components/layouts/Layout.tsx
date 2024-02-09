@@ -1,8 +1,8 @@
 import { Roboto,Rubik } from 'next/font/google'
 import { FC, PropsWithChildren } from 'react'
-import { Footer } from '../ui/Footer'
+
 import InfoHeader from '../ui/InfoHeader'
-import Header from '../ui/Header'
+
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -21,9 +21,9 @@ export const Layout: FC<PropsWithChildren> = ({ menu, children }: any) => {
     <div className={`${roboto.variable} ${rubik.variable}`}>
       {/* <CustomHead /> */}
       <InfoHeader />
-      <Header />
+      {/* <Header /> */}
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
