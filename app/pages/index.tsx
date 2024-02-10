@@ -2,6 +2,8 @@
 //   home: HomeData
 // }
 
+import { Title } from "@atoms/Title";
+
 export default function Index() {
   return (
     <main>
