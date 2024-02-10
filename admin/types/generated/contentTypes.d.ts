@@ -851,13 +851,14 @@ export interface ApiGeneralGeneral extends Schema.SingleType {
     singularName: 'general';
     pluralName: 'generals';
     displayName: 'General';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     address: Attribute.String;
-    adress_url: Attribute.String;
+    address_url: Attribute.String;
     email: Attribute.String;
     phone: Attribute.String;
     logo: Attribute.Media;
@@ -867,7 +868,7 @@ export interface ApiGeneralGeneral extends Schema.SingleType {
     tag_manager: Attribute.String;
     google_analytics: Attribute.String;
     yandex_code: Attribute.String;
-    google_adds: Attribute.String;
+    google_ads: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
