@@ -1,15 +1,24 @@
+/** @format */
+
 // interface HomeProps {
 //   home: HomeData
 // }
 
-import { Title } from "@atoms/Title";
+import Button from '@atoms/Button';
+import { Title } from '@atoms/Title';
 
 export default function Index() {
-  return (
-    <main>
-      <h1>hello sape</h1>
-    </main>
-  )
+	return (
+		<main>
+			<Title
+				title='J&C CONSTRUCCION'
+				subtitle={'OUR COMPANY.'}
+			/>
+      <Button url="#sape">
+        Contact Us
+      </Button>
+		</main>
+	);
 }
 
 // export const getStaticProps: GetStaticProps = async () => {

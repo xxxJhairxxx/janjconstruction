@@ -1,7 +1,5 @@
-/**
- * @format
- * @import './atoms';
- * @import './ui';
+@import './atoms';
+/** @import './ui';
  * @import './organisms';
  * @import './molecules';
  * @import './pageslocals';
@@ -19,6 +17,7 @@
 
 * {
 	@apply font-primary;
+  font-size: 1.9rem;
 }
 
 html {
@@ -35,7 +34,7 @@ body {
 
   h1,h2{
     @apply font-secondary;
-    
+
     font-size: max(1.4rem, calc(2rem * var(--scale)));
   }
 

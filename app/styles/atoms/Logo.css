@@ -1,0 +1,6 @@
+.logoCont {
+  @apply cursor-pointer;
+  img {
+    @apply w-full h-full object-cover;
+  }
+}
