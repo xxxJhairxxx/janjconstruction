@@ -2,6 +2,7 @@
 @import './molecules';
 @import './organisms';
 @import './ui';
+@import './pages';
 @import 'container.css';
 @import 'scale.css';
 @import 'icons.css';

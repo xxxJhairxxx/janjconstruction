@@ -102,19 +102,20 @@
         }
 
         &-li {
-          @apply m-0 p-0 h-fit font-normal text-white relative flex justify-center uppercase;
+          @apply m-0 p-0 h-fit font-normal text-white relative flex justify-center uppercase font-secondary;
           border-top: 0;
           font-size: calc(1.8rem * var(--scale));
           line-height: calc(1.8rem * var(--scale));
           white-space: nowrap;
 
           &::before {
-            @apply bg-secondary rounded-full;
+            @apply bg-[#FDD200] rounded-full;
             content: '';
             position: absolute;
-            bottom: calc(-1rem * var(--scale));
-            height: 7px;
-            width: 7px;
+            bottom: calc(-2rem * var(--scale));
+            left: unset;
+            height: calc(1.1rem * var(--scale));
+            width: calc(1.1rem * var(--scale));
             opacity: 0;
             transition: all 0.3s ease;
           }
