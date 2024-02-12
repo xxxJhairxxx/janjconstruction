@@ -1,91 +1,91 @@
 /** @format */
 
 .HomeBanner {
-	@apply relative flex items-center  justify-center;
-	height: calc(98vh - 5.5rem);
+  @apply relative flex items-center  justify-center;
+  height: calc(98vh - 5.5rem);
 
-	@screen tablet {
-		height: calc(100vh - 5.5rem);
-	}
+  @screen tablet {
+    height: calc(100vh - 5.5rem);
+  }
 
-	@screen laptop {
-		margin-top: calc(-13.5rem * var(--scale));
+  @screen laptop {
+    margin-top: calc(-13rem * var(--scale));
     height: calc(100vh);
-	}
+  }
 
-	&__bg-thumb {
-		@apply w-full h-full  z-[-1]  absolute top-0 left-0;
-	}
+  &__bg-thumb {
+    @apply w-full h-full  z-[-1]  absolute top-0 left-0;
+  }
 
-	&__info {
-		@apply z-10  mt-[18rem];
+  &__info {
+    @apply z-10  mt-[18rem];
 
-    @screen laptop{
-      @apply px-0 ;
+    @screen laptop {
+      @apply px-0;
       max-width: calc(160rem * var(--scale));
-      width: 90% ;
+      width: 90%;
     }
 
-		& > h1 {
-			span {
-				@apply uppercase text-white leading-[1.2] font-secondary;
-				text-shadow: #000 -3px 1px 5px;
-			}
-			span:nth-child(1) {
-				@apply italic block text-[1.7rem];
-			}
-			span:nth-child(2) {
-				@apply text-primary font-[600] text-[4.6rem];
-			}
-			span:nth-child(3) {
-				@apply text-[2.65rem] font-[500];
-			}
+    & > h1 {
+      span {
+        @apply uppercase text-white leading-[1.2] font-secondary;
+        text-shadow: #000 -3px 1px 5px;
+      }
+      span:nth-child(1) {
+        @apply italic block text-[1.7rem];
+      }
+      span:nth-child(2) {
+        @apply text-primary font-[600] text-[4.6rem];
+      }
+      span:nth-child(3) {
+        @apply text-[2.65rem] font-[500];
+      }
 
-			@screen tablet {
-				@apply text-center;
-				span:nth-child(1) {
-					@apply text-[2.5rem];
-				}
+      @screen tablet {
+        @apply text-center;
+        span:nth-child(1) {
+          @apply text-[2.5rem];
+        }
 
-				span:nth-child(2) {
-					@apply text-[6.5rem];
-				}
+        span:nth-child(2) {
+          @apply text-[6.5rem];
+        }
 
-				span:nth-child(3) {
-					@apply block text-[3.25rem] font-[500];
-				}
-			}
+        span:nth-child(3) {
+          @apply block text-[3.25rem] font-[500];
+        }
+      }
 
-			@screen laptop {
-				span {
-					@apply text-left block;
-				}
+      @screen laptop {
+        span {
+          @apply text-left block;
+        }
 
-				span:nth-child(1) {
+        span:nth-child(1) {
           font-size: calc(3rem * var(--scale));
-				}
+        }
 
-				span:nth-child(2) {
+        span:nth-child(2) {
           font-size: calc(10rem * var(--scale));
-				}
+        }
 
-				span:nth-child(3) {
+        span:nth-child(3) {
           font-size: calc(5rem * var(--scale));
-				}
-			}
-		}
-		&__buttons {
-			@apply my-[3rem] flex gap-[1.7rem];
-			@screen tablet {
-				@apply flex justify-center;
-			}
-      @screen laptop{
+        }
+      }
+    }
+    &__buttons {
+      @apply my-[3rem] flex gap-[1.7rem];
+      @screen tablet {
+        @apply flex justify-center;
+      }
+      @screen laptop {
         @apply justify-start;
       }
-		}
+    }
 
-		@screen tablet {
-			@apply mt-[15rem];
-		}    
-	}
+    @screen tablet {
+      @apply mt-[15rem];
+    }
+  }
 }
