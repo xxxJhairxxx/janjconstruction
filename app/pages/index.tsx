@@ -14,11 +14,11 @@ export default function Index() {
 				title='J&C CONSTRUCCION'
 				subtitle={'OUR COMPANY.'}
 			/> */}
-      <Button url={"#"} onClick={()=>alert("sape")}>
+      <Button >
         Contact Us
       </Button> 
 
-	  
+
 		</main>
 	);
 }
