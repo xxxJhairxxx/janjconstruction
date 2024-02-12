@@ -16,6 +16,9 @@
 		}
 		&__thumb {
 			@apply h-[18rem] rounded-3xl overflow-hidden mt-[3rem];
+			@screen tablet {
+				@apply h-[30rem];
+			}
 		}
 	}
 }

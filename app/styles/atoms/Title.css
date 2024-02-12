@@ -8,6 +8,12 @@
     &:after {
       @apply inline-block ml-[1rem] mb-[0.3rem] bg-secondary w-[5rem] h-[0.2rem] rounded-lg;
       content: '';
+      @screen laptop {
+        margin-left: calc(2rem * var(--scale));
+        margin-bottom: calc(0.55rem * var(--scale));
+        height: calc(0.25rem * var(--scale));
+        width: calc(6rem * var(--scale));
+      }
     }
 
     &.yellow {
@@ -16,11 +22,18 @@
         @apply bg-primary;
       }
     }
+
+    @screen laptop {
+      font-size: calc(1.9rem * var(--scale));
+    }
   }
   &_title {
-    @apply text-[2.8rem] text-black font-secondary leading-[1.1] relative font-bold;
+    @apply text-[2.8rem]  text-secondary font-primary leading-[1.1] relative font-[800];
     &.yellow {
       @apply text-primary;
+    }
+    @screen laptop {
+      font-size: calc(4.4rem * var(--scale));
     }
   }
 

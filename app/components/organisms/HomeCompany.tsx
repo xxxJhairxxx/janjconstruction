@@ -23,14 +23,15 @@ const HomeCompany = ({ img, title, subtitle, text }: Props) => {
 	} = useGenerals();
 	return (
 		<section className='HomeCompany'>
-			<Container>
-				<Thumb className='HomeCompany__thumb' img={img} />
-				<div className='HomeCompany__info'>
+			<Container className='HomeCompany__container'>
+				<Thumb className='HomeCompany__container__thumb' contain img={img} />
+				<div className='HomeCompany__container__info'>
 					<Title title={title} subtitle={subtitle} yellow />
 					<p>{text}</p>
 					<Button url='#' type={'icon'} white>
 						{labels_buttons.lbl_read_more}
 					</Button>
+					
 				</div>
 			</Container>
 		</section>

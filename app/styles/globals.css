@@ -1,11 +1,12 @@
+@import 'container.css';
+@import 'scale.css';
+@import 'icons.css';
 @import './atoms';
 @import './molecules';
 @import './organisms';
 @import './ui';
 @import './pages';
-@import 'container.css';
-@import 'scale.css';
-@import 'icons.css';
+
 
 @tailwind base;
 @tailwind components;
@@ -25,7 +26,8 @@ body {
     @apply font-primary text-justify text-black leading-[1.5];
     font-size: 1.63rem;
     @screen laptop {
-      font-size: max(1.4rem, calc(5rem * var(--scale)));
+      @apply leading-[1.7];
+      font-size: max(1.\3rem, calc(2rem * var(--scale)));
     }
   }
 

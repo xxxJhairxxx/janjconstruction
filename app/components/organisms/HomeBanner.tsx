@@ -11,14 +11,28 @@ interface Props {
 	title: string;
 	subtitle: string;
 	img_mobile: Picture;
+	img_tablet: Picture;
+	img_laptop: Picture;
 }
 
-const HomeBanner = ({ title, subtitle, img_mobile }: Props) => {
-
-    const {multilanguage:{labels_buttons}} = useGenerals();
+const HomeBanner = ({
+	title,
+	subtitle,
+	img_mobile,
+	img_tablet,
+	img_laptop,
+}: Props) => {
+	const {
+		multilanguage: { labels_buttons },
+	} = useGenerals();
 	return (
 		<section className='HomeBanner'>
-			<Thumb className={'HomeBanner__bg-thumb'} img={img_mobile} />
+			<Thumb
+				className={'HomeBanner__bg-thumb'}
+				img={img_mobile}
+				img_tablet={img_tablet}
+				img_laptop={img_laptop}
+			/>
 
 			<Container className='HomeBanner__info'>
 				<h1>
@@ -27,9 +41,11 @@ const HomeBanner = ({ title, subtitle, img_mobile }: Props) => {
 					<span>{title.split('**')[2]}</span>
 				</h1>
 				<div className='HomeBanner__info__buttons'>
-                    <Button url='/contact' white>{labels_buttons.lbl_contact_us}</Button>
-                    <Button url='/'>{labels_buttons.lbl_read_more}</Button>
-                </div>
+					<Button url='/contact' white>
+						{labels_buttons.lbl_contact_us}
+					</Button>
+					<Button url='/'>{labels_buttons.lbl_read_more}</Button>
+				</div>
 			</Container>
 		</section>
 	);
