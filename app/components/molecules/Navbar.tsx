@@ -13,24 +13,8 @@ interface NavbarProps {
 
 export const Navbar: FC<NavbarProps> = ({ isMenuOpen, closeMenu }) => {
   const { multilanguage } = useGenerals()
-  const { activeSection, setScrolltoSectionFromOtherPage } = useNavbarContext()
   const { asPath } = useRouter()
   const { isTopZero } = useNavbarContext()
-
-  const handleGoToSection = (url: string) => {
-    goToSection(url)
-    closeMenu()
-  }
-
-  const handleGoToSectionFromOtherPage = (url: string) => {
-    setScrolltoSectionFromOtherPage(url)
-
-    closeMenu()
-  }
-
-  const half = 4
-  const menuPartOne = [...multilanguage.menu].slice(0, half)
-  const menuPartTwo = [...multilanguage.menu].slice(half)
 
   return (
     <nav
@@ -38,50 +22,17 @@ export const Navbar: FC<NavbarProps> = ({ isMenuOpen, closeMenu }) => {
         isTopZero ? 'shadow-none' : ''
       }`}
     >
-      <Logo className='Navbar-logo' />
+      <Logo className='Navbar-logo' type={2} />
       <div className='Navbar-ctn'>
         <ul className='Navbar-ul'>
-          {menuPartOne.map(({ id, label, url }) =>
-            asPath !== '/' ? (
-              <Link
-                key={id}
-                href={'/'}
-                className={`Navbar-ul-link ${url === '/about' ? 'about' : ''}`}
-                onClick={() => handleGoToSectionFromOtherPage(url)}
-              >
-                <li
-                  className={`Navbar-ul-li`}
-                  onClick={() => setScrolltoSectionFromOtherPage(url)}
-                >
-                  {label}
-                </li>
-              </Link>
-            ) : (
-              <li
-                key={id}
-                className={`Navbar-ul-li ${
-                  '/' === asPath && activeSection === url ? 'isActive' : ''
-                } ${url === '/about' ? 'about' : ''}`}
-                onClick={() => handleGoToSection(url)}
-              >
-                {label}
-              </li>
-            )
-          )}
-
-          {menuPartTwo.map(({ id, label, url }) => (
+          {multilanguage.menu.map(({ id, label, url }) => (
             <Link
               key={id}
               href={url}
               onClick={closeMenu}
-              className='Navbar-ul-contact'
+              className='Navbar-ul-link'
             >
-              <li
-                className={`Navbar-ul-li ${url === asPath && 'isActive'}  ${
-                  url === '/contact' && 'contact'
-                } `}
-                onClick={() => setScrolltoSectionFromOtherPage(url)}
-              >
+              <li className={`Navbar-ul-li ${url === asPath && 'isActive'}`}>
                 {label}
               </li>
             </Link>

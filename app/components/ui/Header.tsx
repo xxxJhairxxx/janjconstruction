@@ -1,8 +1,5 @@
-import { useGenerals } from '@/context/generals.context'
 import { useNavbarContext } from '@/context/navbar.context'
-import Image from 'next/image'
-import { useRouter } from 'next/router'
-import React, { use, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Container } from '../globals/Container'
 import { Logo } from '../atoms/Logo'
 import { MenuIcon } from '../atoms/MenuIcon'
@@ -11,8 +8,6 @@ import { Navbar } from '../molecules/Navbar'
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false)
   const { isTopZero } = useNavbarContext()
-  const { generals } = useGenerals()
-  const { asPath } = useRouter()
 
   const [width, setWith] = useState<number>(0)
 
@@ -38,7 +33,6 @@ const Header = () => {
         ${isTopZero ? 'header-fixed' : ''}`}
         />
         <Logo className='Header-Logo2' />
-        {/* <Socials className={`Navbar-socials`} /> */}
 
         <div className={`Header-menuIcon ${isMenuOpen && 'isActive'}`}>
           <MenuIcon setIsActive={toggleMenu} isActive={isMenuOpen} />

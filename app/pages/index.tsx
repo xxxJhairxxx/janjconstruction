@@ -12,7 +12,6 @@ import { GetStaticProps } from 'next'
 
 export default function Index() {
   const { general } = useGenerals()
-  console.log(general)
   return (
     <main>
       {/* <Title

@@ -62,6 +62,7 @@ export interface HomeSectionsHomeCompany extends Schema.Component {
     subtitle: Attribute.String;
     title: Attribute.String;
     text: Attribute.Text;
+    image: Attribute.Media;
   };
 }
 
