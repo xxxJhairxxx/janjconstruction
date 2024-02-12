@@ -7,7 +7,7 @@
   &.top {
     @screen laptop {
       @apply bg-[#302E5D];
-      @apply bg-white;
+      @apply bg-secondary;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
       .Navbar-ul-li:before {
