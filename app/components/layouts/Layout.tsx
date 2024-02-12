@@ -1,8 +1,6 @@
-import { Roboto,Rubik } from 'next/font/google'
+import { Roboto, Rubik } from 'next/font/google'
 import { FC, PropsWithChildren } from 'react'
-
 import InfoHeader from '../ui/InfoHeader'
-
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -16,7 +14,7 @@ const rubik = Rubik({
   variable: '--font-rubik',
 })
 
-export const Layout: FC<PropsWithChildren> = ({ menu, children }: any) => {
+export const Layout: FC<PropsWithChildren> = ({ children }: any) => {
   return (
     <div className={`${roboto.variable} ${rubik.variable}`}>
       {/* <CustomHead /> */}
