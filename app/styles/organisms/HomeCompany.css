@@ -1,0 +1,14 @@
+/** @format */
+
+.HomeCompany {
+	@apply bg-secondary py-[5rem];
+
+	&__thumb {
+		@apply hidden;
+	}
+	&__info {
+		p {
+			@apply text-white py-5 ;
+		}
+	}
+}

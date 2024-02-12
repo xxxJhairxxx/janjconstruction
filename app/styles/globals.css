@@ -21,7 +21,8 @@ html {
 
 body {
   p {
-    font-size: 1.9rem;
+    @apply font-primary text-justify font-[200] leading-[1.7];
+    font-size: 1.63rem;
     @screen laptop {
       font-size: max(1.4rem, calc(5rem * var(--scale)));
     }

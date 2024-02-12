@@ -21,9 +21,9 @@ export const Title: FC<TitleProps> = ({
 }) => {
 	return (
 		<div className={`general_title ${center ? 'center' : ''}  ${className}`}>
-			<h3 className={`general_title_subtitle ${yellow ? 'yellow' : ''}`}>
+			<strong className={`general_title_subtitle ${yellow ? 'yellow' : ''}`}>
 				{subtitle}
-			</h3>
+			</strong>
 			{title && (
 				<Tag className={`general_title_title ${yellow ? 'yellow' : ''}`}>
 					{title}

@@ -30,6 +30,7 @@ export interface HomeOurCompany {
   subtitle: string
   title: string
   text: string
+  image:Picture
 }
 
 export interface HomeOurServices {

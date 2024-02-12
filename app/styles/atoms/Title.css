@@ -1,11 +1,12 @@
 /** @format */
 
 .general_title {
+	@apply uppercase;
 	
 	&_subtitle{
-		@apply text-[1.3rem];
+		@apply text-[1.3rem] font-normal;
 		&:after{
-			@apply inline-block mb-[0.3rem] bg-secondary w-[5rem] h-[0.2rem] rounded-lg;
+			@apply inline-block ml-[1rem] font-semibold mb-[0.3rem] bg-secondary w-[5rem] h-[0.2rem] rounded-lg;
 			content:"";
 		}
 

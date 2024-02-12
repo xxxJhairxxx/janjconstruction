@@ -15,7 +15,7 @@ const Thumb = ({ img, img_tablet, img_laptop, className }: Props) => {
 	return (
 		<picture className={`Thumb-image ${className ? className : ''}`}>
 			{img_laptop && (
-				<source media='(min-width: 1025px)' srcSet={img_laptop.url} />
+				<source media='(min-width: 1024px)' srcSet={img_laptop.url} />
 			)}
 			{img_tablet && (
 				<source media='(min-width: 768px)' srcSet={img_tablet.url} />

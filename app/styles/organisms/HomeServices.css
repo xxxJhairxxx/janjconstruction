@@ -1,0 +1,6 @@
+.HomeServices{
+    @apply my-10;
+    &__container{
+        @apply bg-primary px-[3rem] py-[2rem] rounded-2xl;
+    }
+}
