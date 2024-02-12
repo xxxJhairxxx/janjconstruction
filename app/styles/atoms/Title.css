@@ -28,7 +28,7 @@
     }
   }
   &_title {
-    @apply text-[2.8rem]  text-secondary font-primary leading-[1.1] relative font-[800];
+    @apply text-[2.8rem]  text-black font-secondary leading-[1.1] relative font-bold;
     &.yellow {
       @apply text-primary;
     }
