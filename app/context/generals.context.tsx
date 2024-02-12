@@ -10,28 +10,28 @@ import {
 import { GeneralData } from '@/interfaces/general'
 import { MultilanguageData } from '@/interfaces/multilanguage'
 export interface ControllerState {
-  generals: GeneralData
-  polylang: MultilanguageData
+  general: GeneralData
+  multilanguage: MultilanguageData
 }
 
 const useGeneralsController = ({
-  generals,
-  polylang,
+  general,
+  multilanguage,
 }: ControllerState): ControllerState => {
-  const [generalss, setGenerals] = useState({ generals, polylang })
+  const [generals, setGenerals] = useState({ general, multilanguage })
 
   useEffect(() => {
     setGenerals({
-      generals,
-      polylang,
+      general,
+      multilanguage,
     })
   }, [])
 
-  return { generals: generalss.generals, polylang: generalss.polylang }
+  return { general: generals.general, multilanguage: generals.multilanguage }
 }
 
 const initialState: ControllerState = {
-  generals: {
+  general: {
     id: 1,
     address: '',
     email: '',
@@ -49,7 +49,7 @@ const initialState: ControllerState = {
     logo: [],
     social_networks: [],
   },
-  polylang: {
+  multilanguage: {
     id: 1,
     createdAt: '',
     updatedAt: '',
