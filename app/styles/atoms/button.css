@@ -1,3 +1,20 @@
-.button{
-@apply bg-secondary text-white px-8 py-5 rounded-[4rem];
+/** @format */
+
+.button {
+	@apply text-secondary;
+
+    &:after{
+        @apply text-white w-[3rem] h-[3rem] ml-2 mb-[-0.75rem] rounded-full bg-secondary inline-block ;
+        content:"";
+    }
+
 }
+
+.btn-white{
+    @apply text-white;
+    &:after{
+        @apply text-secondary bg-white;
+    }
+}
+
+

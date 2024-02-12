@@ -10,13 +10,15 @@ import { Title } from '@atoms/Title';
 export default function Index() {
 	return (
 		<main>
-			<Title
+			{/* <Title
 				title='J&C CONSTRUCCION'
 				subtitle={'OUR COMPANY.'}
-			/>
-      <Button url="#sape">
+			/> */}
+      <Button url={"#"} onClick={()=>alert("sape")}>
         Contact Us
-      </Button>
+      </Button> 
+
+	  
 		</main>
 	);
 }

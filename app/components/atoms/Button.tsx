@@ -4,22 +4,26 @@ import React, { PropsWithChildren } from 'react'
 interface ButtonProps extends PropsWithChildren {
   url?: string
   className?: string
-  icon?:String
+  icon?:string
+  onClick?: ()=> void
+  white?: boolean
 }
 
 export const Button: React.FC<ButtonProps> = ({
   children,
   url,
   className,
-  icon
+  icon,
+  onClick,
+  white = false
 }) => {
 
   return url ? (
-    <Link className={`button ${className}`} href={url}>
+    <Link className={`button ${white?"btn-white":""} ${className}`} href={url}>
       {children}
     </Link>
   ) : (
-    <button className={`button ${className}`}>{children}</button>
+    <button className={`button ${className}`} onClick={onClick}>{children}</button>
   )
 }
 
