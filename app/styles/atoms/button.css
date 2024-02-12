@@ -2,18 +2,25 @@
 
 .button-link {
 	@apply text-white  text-[1.65rem] border-[0.2rem] transition-colors  border-white bg-transparent px-[3.7rem] font-semibold py-[0.9rem] rounded-[5rem];
-    transition-duration: 0.5s;
-    &.btn-white {
-		@apply bg-white text-secondary;
-		
+	transition-duration: 0.5s;
+
+	@screen tablet {
+		@apply text-[2rem];
 	}
-    &:hover{
-        @apply bg-primary border-primary text-secondary ;
-    }
+	@screen laptop {
+		font-size: calc(2.3rem * var(--scale));
+	}
+
+	&.btn-white {
+		@apply bg-white text-secondary;
+	}
+	&:hover {
+		@apply bg-primary border-primary text-secondary;
+	}
 }
 
 .button-link-icon {
-	@apply text-secondary font-semibold text-[1.65rem] my-5 flex items-center w-fit justify-center ;
+	@apply text-secondary font-semibold text-[1.65rem] my-5 flex items-center w-fit justify-center;
 
 	&:after {
 		@apply text-white font-normal transition-colors text-[1rem] text-center w-[2.9rem] h-[2.9rem] ml-[0.9rem]  rounded-full bg-secondary flex justify-center items-center;
@@ -23,20 +30,32 @@
 		&:hover {
 			@apply bg-primary;
 		}
+		@screen laptop {
+			font-size: calc(1.4rem * var(--scale));
+			width: calc(3.6rem * var(--scale));
+			height: calc(3.6rem * var(--scale));
+			margin-left: calc(1.2rem * var(--scale));
+			margin-top:calc(0.1rem * var(--scale));
+		}
 	}
 
 	&.btn-white {
 		@apply text-white;
 		&:after {
 			@apply text-secondary bg-white;
-            &:hover {
-                @apply bg-primary;
-            }
-        }
+			&:hover {
+				@apply bg-primary;
+			}
+		}
+	}
+
+	@screen laptop {
+		@apply font-[400];
+		font-size: calc(2rem * var(--scale));
+		margin-block: calc(2rem * var(--scale));
 	}
 }
 
-.button{
-    @apply text-secondary font-semibold underline underline-offset-4;
-    
+.button {
+	@apply text-secondary font-semibold underline underline-offset-4;
 }

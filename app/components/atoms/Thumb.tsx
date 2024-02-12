@@ -9,13 +9,20 @@ interface Props {
 	img_tablet?: Picture;
 	img_laptop?: Picture;
 	className?: string;
+	contain?: boolean;
 }
 
-const Thumb = ({ img, img_tablet, img_laptop, className }: Props) => {
+const Thumb = ({
+	img,
+	img_tablet,
+	img_laptop,
+	className,
+	contain = false,
+}: Props) => {
 	return (
 		<picture className={`Thumb-image ${className ? className : ''}`}>
 			{img_laptop && (
-				<source media='(min-width: 1024px)' srcSet={img_laptop.url} />
+				<source media='(min-width: 1024px)' srcSet={img_laptop?.url} />
 			)}
 			{img_tablet && (
 				<source media='(min-width: 768px)' srcSet={img_tablet.url} />
@@ -25,8 +32,8 @@ const Thumb = ({ img, img_tablet, img_laptop, className }: Props) => {
 				width={img.width}
 				height={img.height}
 				alt={img.alternativeText || ''}
+				className={contain ? '!object-contain' : ''}
 			/>
-			
 		</picture>
 	);
 };

@@ -6,5 +6,9 @@
 		p {
 			@apply text-center;
 		}
+
+        @screen tablet {
+            @apply w-[40rem];
+        }
 	}
 }

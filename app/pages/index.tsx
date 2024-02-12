@@ -21,6 +21,8 @@ const Index = ({ home }: HomeProps) => {
 				title={home.home_banner.title}
 				subtitle={home.home_banner.subtitle}
 				img_mobile={home.home_banner.img_mobile}
+				img_tablet={home.home_banner.img_tablet}
+				img_laptop={home.home_banner.img_laptop}
 			/>
 			<HomeCompany
 				title={home.home_our_company.title}

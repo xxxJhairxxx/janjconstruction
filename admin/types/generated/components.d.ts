@@ -95,6 +95,7 @@ export interface HomeSectionsHomeSections extends Schema.Component {
   collectionName: 'components_home_sections_home_sections';
   info: {
     displayName: 'Home Sections';
+    description: '';
   };
   attributes: {
     subtitle: Attribute.String;

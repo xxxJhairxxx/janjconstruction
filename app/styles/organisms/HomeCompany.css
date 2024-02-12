@@ -3,12 +3,35 @@
 .HomeCompany {
 	@apply bg-secondary py-[5rem];
 
-	&__thumb {
-		@apply hidden;
-	}
-	&__info {
-		p {
-			@apply text-white py-5 ;
+	&__container {
+		&__thumb {
+			@apply hidden;
+			@screen laptop {
+				@apply block;
+				width: calc(95rem * var(--scale));
+				margin-left: calc(-5rem * var(--scale));
+			}
 		}
+		&__info {
+			p {
+				@apply text-white py-5;
+			}
+
+			@screen laptop {
+				@apply flex-1;
+				p {
+					@apply !font-[200];
+				}
+			}
+		}
+
+		@screen laptop {
+			@apply py-0 flex items-center max-w-none w-full;
+			gap: calc(10rem * var(--scale));
+			padding-right: calc(25rem * var(--scale));
+		}
+	}
+	@screen laptop {
+		@apply py-0;
 	}
 }
