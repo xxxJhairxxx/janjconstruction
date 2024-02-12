@@ -19,9 +19,7 @@ export default function Index() {
 				title='J&C CONSTRUCCION'
 				subtitle={'OUR COMPANY.'}
 			/> */}
-      <Button url={'#'} onClick={() => alert('sape')}>
-        Contact Us
-      </Button>
+      <Button>Contact Us</Button>
     </main>
   )
 }
