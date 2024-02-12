@@ -9,19 +9,19 @@ interface LogoProps {
 }
 
 export const Logo: FC<LogoProps> = ({ className, type }) => {
-  const { generals } = useGenerals()
+  const { general } = useGenerals()
 
   const i = type ? type : 0
 
   return (
     <Link href='/' legacyBehavior>
       <picture className={`logoCont ${className}`}>
-        {generals.logo[i].url && (
+        {general.logo[i].url && (
           <Image
             priority
-            src={generals.logo[i].url}
-            width={generals.logo[i].width}
-            height={generals.logo[i].height}
+            src={general.logo[i].url}
+            width={general.logo[i].width}
+            height={general.logo[i].height}
             alt={''}
           ></Image>
         )}

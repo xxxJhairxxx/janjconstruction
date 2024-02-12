@@ -12,7 +12,7 @@ interface NavbarProps {
 }
 
 export const Navbar: FC<NavbarProps> = ({ isMenuOpen, closeMenu }) => {
-  const { polylang } = useGenerals()
+  const { multilanguage } = useGenerals()
   const { activeSection, setScrolltoSectionFromOtherPage } = useNavbarContext()
   const { asPath } = useRouter()
   const { isTopZero } = useNavbarContext()
@@ -29,8 +29,8 @@ export const Navbar: FC<NavbarProps> = ({ isMenuOpen, closeMenu }) => {
   }
 
   const half = 4
-  const menuPartOne = [...polylang.menu].slice(0, half)
-  const menuPartTwo = [...polylang.menu].slice(half)
+  const menuPartOne = [...multilanguage.menu].slice(0, half)
+  const menuPartTwo = [...multilanguage.menu].slice(half)
 
   return (
     <nav

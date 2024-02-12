@@ -11,8 +11,8 @@ import { useGenerals } from '@context/generals.context'
 import { GetStaticProps } from 'next'
 
 export default function Index() {
-  const { generals } = useGenerals()
-  console.log(generals)
+  const { general } = useGenerals()
+  console.log(general)
   return (
     <main>
       {/* <Title
