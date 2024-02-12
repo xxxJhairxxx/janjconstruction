@@ -19,7 +19,7 @@ export interface GeneralData {
   publishedAt: string
   google_ads: string
   address_url: string
-  logo: Logo
+  logo: Logo[]
   social_networks: SocialNetworks[]
 }
 

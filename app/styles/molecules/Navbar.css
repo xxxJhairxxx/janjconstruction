@@ -1,0 +1,155 @@
+.isActive {
+  @apply !opacity-100;
+}
+.Navbar-ul-li:hover {
+  @apply !opacity-100;
+}
+
+.nav-btn {
+  @apply hidden;
+  @screen laptop {
+    display: block;
+    margin-right: calc(1.2rem * var(--scale));
+  }
+}
+
+/* PRINCIPAL */
+.Navbar {
+  padding-top: 8rem;
+  padding-bottom: 2rem;
+  border-radius: 0 0 1.5rem 1.5rem;
+  transform: translateY(-120%);
+  transition: transform 0.3s ease;
+  z-index: 100;
+  width: 100%;
+  @apply fixed top-0 right-0  bg-primary;
+
+  &.isActive {
+    transform: translateY(0%);
+
+    @screen laptop {
+      transform: translateY(0);
+    }
+  }
+
+  &-socials {
+    @apply absolute top-[1.9rem] right-[7.7rem] flex gap-[1.38rem];
+    i {
+      @apply text-[2.54rem] text-primary;
+    }
+
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  &-logo {
+    @apply absolute top-[0.7rem] left-[2.4rem] mt-0;
+    img {
+      @apply w-[9.1rem];
+    }
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  &-ul {
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    @apply flex flex-col;
+
+    li {
+      border-top: 1px solid hsla(0, 0%, 100%, 0.2);
+      padding: 0.4rem 0;
+      transition: color 0.5s ease;
+      text-decoration: none;
+      @apply px-12 relative cursor-pointer capitalize text-white font-primary font-normal text-[1.7rem];
+
+      i {
+        @apply hidden;
+      }
+      span {
+        @apply hidden;
+      }
+
+      &.about {
+        @screen laptop {
+          margin-right: calc(31rem * var(--scale));
+        }
+      }
+    }
+
+    .Navbar-ul-li.isActive {
+      @apply font-semibold;
+      @screen laptop {
+        @apply font-medium;
+
+        &::before {
+          @apply bg-secondary rounded-full;
+          content: '';
+          position: absolute;
+          bottom: calc(-1rem * var(--scale));
+          height: 7px;
+          width: 7px;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @screen laptop {
+    @apply static inset-auto rounded-xl p-0  mx-auto flex items-center justify-end transform-none bg-transparent;
+    height: calc(9.4rem * var(--scale));
+    width: calc(150rem * var(--scale));
+    &-ctn {
+      @apply flex justify-end items-center;
+      .Navbar-ul {
+        @apply flex flex-row justify-end items-center m-0 p-0;
+        gap: calc(11.8rem * var(--scale));
+
+        &-li {
+          @apply block m-0 p-0 h-fit font-normal text-primary relative flex justify-center;
+          border-top: 0;
+          font-size: calc(1.9rem * var(--scale));
+
+          &::before {
+            @apply bg-secondary rounded-full;
+            content: '';
+            position: absolute;
+            bottom: calc(-1rem * var(--scale));
+            height: 7px;
+            width: 7px;
+            opacity: 0;
+            transition: all 0.3s ease;
+          }
+
+          &:hover {
+            &::before {
+              opacity: 1;
+            }
+          }
+        }
+
+        &-contact {
+          @apply bg-secondary transition-all ease-in-out text-white absolute rounded-[5rem] flex items-center justify-center;
+          height: calc(4.8rem * var(--scale));
+          padding: calc(1.1rem * var(--scale)) calc(2.5rem * var(--scale));
+          transition-duration: 0.2s;
+
+          li {
+            @apply !font-bold bg-secondary;
+            font-size: calc(1.9rem * var(--scale));
+          }
+        }
+      }
+    }
+  }
+}
+
+.Navbar-ul-link {
+  &.about {
+    @screen laptop {
+      margin-right: calc(31rem * var(--scale));
+    }
+  }
+}

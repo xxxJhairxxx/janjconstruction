@@ -4,39 +4,40 @@
 //   home: HomeData
 // }
 
-import Button from '@atoms/Button';
-import { Title } from '@atoms/Title';
+import { getGenerals } from '@/lib/getGenerals'
+import Button from '@atoms/Button'
+import { Title } from '@atoms/Title'
+import { useGenerals } from '@context/generals.context'
+import { GetStaticProps } from 'next'
 
 export default function Index() {
-	return (
-		<main>
-			{/* <Title
+  const { generals } = useGenerals()
+  console.log(generals)
+  return (
+    <main>
+      {/* <Title
 				title='J&C CONSTRUCCION'
 				subtitle={'OUR COMPANY.'}
 			/> */}
-      <Button url={"#"} onClick={()=>alert("sape")}>
+      <Button url={'#'} onClick={() => alert('sape')}>
         Contact Us
-      </Button> 
-
-	  
-		</main>
-	);
+      </Button>
+    </main>
+  )
 }
 
-// export const getStaticProps: GetStaticProps = async () => {
-//   const generals = await getGenerals()
-//   const resources = await getArticles()
+export const getStaticProps: GetStaticProps = async () => {
+  const generals = await getGenerals()
 
-//   const [{ data: home }] = await Promise.all([
-//     baseApi.get<Home>(`/home?locale=en&populate=deep`),
-//   ])
+  // const [{ data: home }] = await Promise.all([
+  //   baseApi.get<Home>(`/home?locale=en&populate=deep`),
+  // ])
 
-//   return {
-//     props: {
-//       home: home.data,
-//       generals,
-//       resources,
-//     },
-//     revalidate: 1,
-//   }
-// }
+  return {
+    props: {
+      // home: home.data,
+      generals,
+    },
+    revalidate: 1,
+  }
+}

@@ -1,0 +1,99 @@
+.Header {
+  @apply h-[6.3rem] w-full top-0 flex items-center fixed bg-white;
+  transition: background 0.8s ease;
+  z-index: 400;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  &.top {
+    .Header-Logo {
+      top: 0;
+    }
+  }
+
+  &-Logo {
+    @apply hidden;
+    transition: all .4s ease-in-out;
+    @screen laptop {
+      @apply flex items-start absolute z-[3];
+      height: calc(17.6rem * var(--scale));
+      width: calc(20.3rem * var(--scale));
+      top: calc(-3.1rem * var(--scale));
+      left: 0;
+      &.header-fixed{
+        padding-top: calc(.5rem * var(--scale));
+        width: calc(15rem * var(--scale));
+        height: auto;
+      }
+    }
+  }
+
+  &-Logo2 {
+    @apply flex w-[9.1rem] h-[7.88rem] absolute left-[2.4rem] top-[0.7rem];
+
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  &-phone {
+    @apply h-[3.8rem] w-auto pl-[0.7rem] pr-[1.2rem] py-[1rem] !text-white right-32 font-semibold bg-primary text-[1.6rem] absolute flex items-center  gap-[0.8rem] rounded-l-full rounded-r-full;
+    z-index: 2;
+
+    &-thumb {
+      @apply bg-white w-[3rem] h-[3rem]  rounded-full flex items-center justify-center;
+      img {
+        @apply w-[50%] h-[50%] object-contain;
+      }
+    }
+
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+
+  &-menuIcon {
+    @apply absolute z-[110];
+    right: 0;
+    top: 0;
+    &.isActive {
+      top: 1.5rem;
+    }
+    @screen laptop {
+      @apply hidden;
+    }
+  }
+  &-ctn {
+    @apply h-full w-full mx-auto relative;
+  }
+
+  &-overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    @apply fixed inset-0 w-full left-0 top-0 bg-black/40 pointer-events-none h-screen;
+    z-index: -1;
+    @screen laptop {
+      @apply hidden;
+    }
+
+    &.isActive {
+      opacity: 1;
+      @apply pointer-events-auto;
+    }
+  }
+
+  /**=======LAPTOP===============**/
+
+  @screen laptop {
+    @apply bg-white flex items-center !sticky rounded-none;
+    transition: background-color 0.25s ease;
+    height: calc(9.5rem * var(--scale));
+    left: 0;
+    transform: translateX(0);
+    top: 0;
+    padding: 0;
+    width: 100%;
+    &-ctn {
+      height: auto;
+    }
+  }
+}

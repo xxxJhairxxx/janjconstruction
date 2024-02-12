@@ -3,26 +3,32 @@ import { Layout } from '@/components/layouts'
 import '@/styles/globals.css'
 import Head from 'next/head'
 import { AppProps } from 'next/app'
+import { ControllerState, GeneralsProvider } from '@context/generals.context'
+import { NavbarProvider } from '@context/navbar.context'
 
-export default function App({ Component, pageProps }: AppProps) {
+interface CustomPageProps {
+  generals: ControllerState
+}
+
+export default function App({
+  Component,
+  pageProps,
+}: AppProps<CustomPageProps>) {
+  console.log(pageProps.generals)
   return (
     <>
       <Head>
         <title>J&C Construccion</title>
         {/* <Favicon /> */}
       </Head>
-      {/* 
-   
-        <GeneralsProvider generals={pageProps.generals}>
-          <LanguageProvider>
-            <NavbarProvider> */}
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-      {/* </NavbarProvider>
-          </LanguageProvider>
-        </GeneralsProvider>
-      */}
+
+      <GeneralsProvider generals={pageProps.generals}>
+        <NavbarProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </NavbarProvider>
+      </GeneralsProvider>
     </>
   )
 }

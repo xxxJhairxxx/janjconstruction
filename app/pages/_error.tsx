@@ -1,6 +1,5 @@
 import type { NextPage } from 'next'
 import { getGenerals } from '../lib/getGenerals'
-import { getArticles } from '@/lib/getArticles'
 
 const Error: NextPage = () => {
   return <div>_error</div>
@@ -8,15 +7,13 @@ const Error: NextPage = () => {
 
 export default Error
 
-// export const getStaticProps = async () => {
-//   const generals = await getGenerals()
-//   const resources = await getArticles()
+export const getStaticProps = async () => {
+  const generals = await getGenerals()
 
-//   return {
-//     props: {
-//       generals,
-//       resources,
-//     },
-//     revalidate: 1,
-//   }
-// }
+  return {
+    props: {
+      generals,
+    },
+    revalidate: 1,
+  }
+}
