@@ -1,5 +1,4 @@
 import { About, AboutData } from '@/interfaces/about'
-import { Home } from '@/interfaces/home'
 import { baseApi } from '@/lib/baseApi'
 import { getGenerals } from '@/lib/getGenerals'
 import { Title } from '@atoms/Title'
