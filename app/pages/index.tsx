@@ -1,41 +1,41 @@
 /** @format */
 
-// interface HomeProps {
-//   home: HomeData
-// }
+import { Home, HomeData } from '@/interfaces/home';
+import { baseApi } from '@/lib/baseApi';
+import { getGenerals } from '@/lib/getGenerals';
+import HomeBanner from '@organisms/HomeBanner';
+import { GetStaticProps } from 'next';
 
-import { getGenerals } from '@/lib/getGenerals'
-import Button from '@atoms/Button'
-import { Title } from '@atoms/Title'
-import { useGenerals } from '@context/generals.context'
-import { GetStaticProps } from 'next'
-
-export default function Index() {
-  const { general } = useGenerals()
-  console.log(general)
-  return (
-    <main>
-      {/* <Title
-				title='J&C CONSTRUCCION'
-				subtitle={'OUR COMPANY.'}
-			/> */}
-      <Button>Contact Us</Button>
-    </main>
-  )
+interface HomeProps {
+	home: HomeData;
 }
+
+const Index = ({ home }: HomeProps) => {
+	return (
+		<main>
+			<HomeBanner
+				title={home.home_banner.title}
+				subtitle={home.home_banner.subtitle}
+				img_mobile={home.home_banner.img_mobile}
+			/>
+		</main>
+	);
+};
+
+export default Index;
 
 export const getStaticProps: GetStaticProps = async () => {
-  const generals = await getGenerals()
+	const generals = await getGenerals();
 
-  // const [{ data: home }] = await Promise.all([
-  //   baseApi.get<Home>(`/home?locale=en&populate=deep`),
-  // ])
+	const [{ data: home }] = await Promise.all([
+		baseApi.get<Home>(`/home?locale=en&populate=deep`),
+	]);
 
-  return {
-    props: {
-      // home: home.data,
-      generals,
-    },
-    revalidate: 1,
-  }
-}
+	return {
+		props: {
+			home: home.data,
+			generals,
+		},
+		revalidate: 1,
+	};
+};

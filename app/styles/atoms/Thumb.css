@@ -1,0 +1,7 @@
+.Thumb-image{
+ @apply block ;
+
+ & > img{
+    @apply w-full h-full object-cover;
+ }
+}

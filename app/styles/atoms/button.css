@@ -1,7 +1,7 @@
 /** @format */
 
 .button-link {
-	@apply text-white border-[0.2rem] transition-colors  border-white bg-transparent px-[3.5rem] font-semibold py-5 rounded-[5rem];
+	@apply text-white border-[0.2rem] transition-colors  border-white bg-transparent px-[3.7rem] font-semibold py-[1rem] rounded-[5rem];
     transition-duration: 0.5s;
     &.btn-white {
 		@apply bg-white text-secondary;
@@ -13,7 +13,7 @@
 }
 
 .button-link-icon {
-	@apply text-secondary flex items-center w-fit justify-center;
+	@apply text-secondary flex items-center w-fit justify-center ;
 
 	&:after {
 		@apply text-white transition-colors text-[1.2rem] text-center py-[0.6rem] w-[3rem] h-[3rem] ml-2  rounded-full bg-secondary inline-block;
