@@ -5,8 +5,9 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   &.top {
-    .Header-Logo {
-      top: 0;
+    @screen laptop {
+      @apply bg-white;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
   }
 
@@ -14,16 +15,11 @@
     @apply hidden;
     transition: all 0.4s ease-in-out;
     @screen laptop {
-      @apply flex items-start absolute z-[3];
+      @apply flex items-start relative z-[3];
       height: calc(8.2rem * var(--scale));
       width: calc(24.63rem * var(--scale));
-      top: calc(4.1rem * var(--scale));
-      left: 0;
-      /* &.header-fixed {
-        padding-top: calc(0.5rem * var(--scale));
-        width: calc(15rem * var(--scale));
-        height: auto;
-      } */
+      top: calc(2.5rem * var(--scale));
+      left: calc(2.5rem * var(--scale));
     }
   }
 
@@ -84,7 +80,7 @@
   /**=======LAPTOP===============**/
 
   @screen laptop {
-    @apply bg-white flex items-center !sticky rounded-none;
+    @apply bg-transparent flex items-center !sticky rounded-none;
     transition: background-color 0.25s ease;
     height: calc(9.5rem * var(--scale));
     left: 0;
@@ -92,8 +88,12 @@
     top: 0;
     padding: 0;
     width: 100%;
+    box-shadow: none;
+
     &-ctn {
       height: auto;
+      display: flex;
+      max-width: unset !important;
     }
   }
 }
