@@ -1,0 +1,10 @@
+/** @format */
+
+.HomeWeWord {
+	&__info {
+        @apply w-[34rem] mx-auto;
+		p {
+			@apply text-center;
+		}
+	}
+}

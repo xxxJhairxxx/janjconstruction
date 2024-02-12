@@ -1,0 +1,11 @@
+.HomeMiddle{
+    @apply h-[24rem] px-2 my-[4.5rem] relative flex justify-center items-center text-center ;
+    &__image{
+        @apply absolute left-0 top-0 z-[-1] h-full w-full;
+    }
+
+    h2{
+        @apply text-[2.8rem] text-white font-bold;
+        text-shadow: rgba(0, 0, 0, 0.422) -3px 1px 10px;
+    }
+}

@@ -1,6 +1,21 @@
-.HomeServices{
-    @apply my-10;
-    &__container{
-        @apply bg-primary px-[3rem] py-[2rem] rounded-2xl;
-    }
+/** @format */
+
+.HomeServices {
+	@apply my-10;
+	&__container {
+		@apply bg-primary px-[3rem] py-[2rem] rounded-2xl;
+
+		&__info {
+			p {
+				@apply font-normal py-5;
+			}
+
+			&-btn:after {
+				@apply text-primary;
+			}
+		}
+		&__thumb {
+			@apply h-[18rem] rounded-3xl overflow-hidden mt-[3rem];
+		}
+	}
 }

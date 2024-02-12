@@ -1,7 +1,7 @@
 /** @format */
 
 .button-link {
-	@apply text-white text-[1.65rem] border-[0.2rem] transition-colors  border-white bg-transparent px-[3.7rem] font-semibold py-[0.9rem] rounded-[5rem];
+	@apply text-white  text-[1.65rem] border-[0.2rem] transition-colors  border-white bg-transparent px-[3.7rem] font-semibold py-[0.9rem] rounded-[5rem];
     transition-duration: 0.5s;
     &.btn-white {
 		@apply bg-white text-secondary;
@@ -13,10 +13,10 @@
 }
 
 .button-link-icon {
-	@apply text-secondary text-[1.65rem] flex items-center w-fit justify-center ;
+	@apply text-secondary font-semibold text-[1.65rem] my-5 flex items-center w-fit justify-center ;
 
 	&:after {
-		@apply text-white transition-colors text-[1.1rem] text-center w-[2.8rem] h-[2.8rem] ml-[0.9rem]  rounded-full bg-secondary flex justify-center items-center;
+		@apply text-white font-normal transition-colors text-[1rem] text-center w-[2.9rem] h-[2.9rem] ml-[0.9rem]  rounded-full bg-secondary flex justify-center items-center;
 		content: '\e902';
 		transition-duration: 0.4s;
 		font-family: 'icomoon';

@@ -5,6 +5,8 @@ import { baseApi } from '@/lib/baseApi';
 import { getGenerals } from '@/lib/getGenerals';
 import HomeBanner from '@organisms/HomeBanner';
 import HomeCompany from '@organisms/HomeCompany';
+import HomeMiddle from '@organisms/HomeMiddle';
+import HomeWeWord from '@organisms/HomeProjects';
 import HomeServices from '@organisms/HomeServices';
 import { GetStaticProps } from 'next';
 
@@ -31,6 +33,12 @@ const Index = ({ home }: HomeProps) => {
 				subtitle={home.home_our_services.subtitle}
 				text={home.home_our_services.text}
 				img={home.home_our_services.image}
+			/>
+			<HomeMiddle title={home.home_middle.title} img={home.home_middle.image} />
+			<HomeWeWord
+				title={home.home_we_work.title}
+				subtitle={home.home_we_work.subtitle}
+				text={home.home_we_work.text}
 			/>
 		</main>
 	);

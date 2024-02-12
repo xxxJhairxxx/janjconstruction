@@ -4,9 +4,9 @@
 	@apply uppercase;
 	
 	&_subtitle{
-		@apply text-[1.3rem] font-normal;
+		@apply text-[1.3rem] font-semibold;
 		&:after{
-			@apply inline-block ml-[1rem] font-semibold mb-[0.3rem] bg-secondary w-[5rem] h-[0.2rem] rounded-lg;
+			@apply inline-block ml-[1rem] mb-[0.3rem] bg-secondary w-[5rem] h-[0.2rem] rounded-lg;
 			content:"";
 		}
 
@@ -18,7 +18,7 @@
 		}
 	}
 	&_title{
-		@apply text-[2.8rem]  text-secondary font-primary leading-[1.5] relative font-bold;
+		@apply text-[2.8rem]  text-secondary font-primary leading-[1.1] relative font-[800];
 		&.yellow{
 			@apply text-primary;
 		}
