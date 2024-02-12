@@ -1,13 +1,8 @@
 @import './atoms';
-/** @import './ui';
- * @import './organisms';
- * @import './molecules';
- * @import './pageslocals';
- * @import 'container.css';
-
- * @import 'icons.css';
- */
-
+@import './molecules';
+@import './organisms';
+@import './ui';
+@import 'container.css';
 @import 'scale.css';
 @import 'icons.css';
 
@@ -16,68 +11,66 @@
 @tailwind utilities;
 
 * {
-	@apply font-primary;
+  @apply font-primary;
   font-size: 1.9rem;
 }
 
 html {
-	font-size: 62.5%;
+  font-size: 62.5%;
 }
 
 body {
-	p {
-		font-size: 1.9rem;
-		@screen laptop {
+  p {
+    font-size: 1.9rem;
+    @screen laptop {
       font-size: max(1.4rem, calc(5rem * var(--scale)));
-		}
-	}
+    }
+  }
 
-  h1,h2{
+  h1,
+  h2 {
     @apply font-secondary;
 
     font-size: max(1.4rem, calc(2rem * var(--scale)));
   }
-
-
-
 }
 
 textarea {
-	resize: none;
+  resize: none;
 }
 
 textarea,
 select,
 input {
-	@apply border-none bg-none;
-	&:focus {
-		outline: none;
-	}
+  @apply border-none bg-none;
+  &:focus {
+    outline: none;
+  }
 }
 
 .main-page {
-	animation-name: fadeIn;
-	animation-duration: 0.6s;
-	animation-timing-function: ease-in;
-	background-image: var(--bg-img);
+  animation-name: fadeIn;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in;
+  background-image: var(--bg-img);
 }
 
 p,
 li {
-	@apply leading-[1.5] text-[1.4rem] font-[300] text-[#606060];
+  @apply leading-[1.5] text-[1.4rem] font-[300] text-[#606060];
 
-	@screen laptop {
-		font-size: calc(1.6rem * var(--scale));
-	}
+  @screen laptop {
+    font-size: calc(1.6rem * var(--scale));
+  }
 }
 
 @keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 /* .error-group {
