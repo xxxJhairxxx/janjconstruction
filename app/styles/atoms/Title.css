@@ -6,7 +6,7 @@
   &_subtitle {
     @apply text-[1.3rem] font-semibold;
     &:after {
-      @apply inline-block ml-[1rem] mb-[0.3rem] bg-secondary w-[5rem] h-[0.2rem] rounded-lg;
+      @apply inline-block ml-[1rem] mb-[0.3rem] bg-black w-[5rem] h-[0.2rem] rounded-lg;
       content: '';
       @screen laptop {
         margin-left: calc(2rem * var(--scale));
