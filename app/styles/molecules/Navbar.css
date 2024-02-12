@@ -91,12 +91,22 @@
 
       .Navbar-ul {
         @apply flex flex-row justify-end items-center m-0 p-0;
-        gap: calc(11.8rem * var(--scale));
+        gap: calc(20rem * var(--scale));
+        padding-top: calc(1.9rem * var(--scale));
+        padding-left: calc(10rem * var(--scale));
+        padding-right: calc(10rem * var(--scale));
+        border-top: 1px solid white;
+
+        &-link {
+          @apply bg-transparent;
+        }
 
         &-li {
-          @apply m-0 p-0 h-fit font-normal text-primary relative flex justify-center;
+          @apply m-0 p-0 h-fit font-normal text-white relative flex justify-center uppercase;
           border-top: 0;
-          font-size: calc(1.9rem * var(--scale));
+          font-size: calc(1.8rem * var(--scale));
+          line-height: calc(1.8rem * var(--scale));
+          white-space: nowrap;
 
           &::before {
             @apply bg-secondary rounded-full;
