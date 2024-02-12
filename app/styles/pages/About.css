@@ -1,0 +1,14 @@
+.about {
+  &-description-one {
+    @apply pt-[6.2rem] pb-[3.76rem];
+    background-image: url('/img/about-bg.webp');
+    background-size: cover;
+    background-position: center;
+    border-radius: 0 0 1rem 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+    p {
+      @apply font-primary font-light text-[1.5rem] leading-[2.32rem] text-black mt-[1.54rem];
+    }
+  }
+}

@@ -1,5 +1,5 @@
 .Header {
-  @apply h-[5.5rem] w-full top-0 flex items-center fixed bg-[#302E5D];
+  @apply h-[5.5rem] w-full top-0 flex items-center sticky bg-[#302E5D];
   transition: background 0.8s ease;
   z-index: 400;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -8,6 +8,10 @@
     @screen laptop {
       @apply bg-white;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      .Navbar-ul-li:before {
+        @apply bg-secondary;
+      }
     }
   }
 
