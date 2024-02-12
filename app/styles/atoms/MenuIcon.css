@@ -1,0 +1,84 @@
+.menu-icon {
+  @apply h-full;
+  --menu-size: 5.8rem;
+  &.hamburguer {
+    height: 6.3rem;
+    width: 6rem;
+    transition: background-color 0.4s ease;
+    @apply bg-transparent flex justify-center items-center cursor-pointer;
+    @screen laptoplg {
+      @apply hidden;
+    }
+
+    .span {
+      height: 0.2rem;
+      width: 2.17rem;
+      transition: transform 0.4s ease;
+      @apply bg-secondary inline-block absolute mx-auto rounded-[1rem];
+    }
+    .span:nth-child(1) {
+      transform: translateY(-0.8rem);
+    }
+    .span:nth-child(3) {
+      transform: translateY(0.8rem);
+    }
+    /* Animacion cuando "isActive" es true */
+    &.change {
+      height: 3.7rem;
+      @apply bg-transparent;
+      &::before {
+        content: '';
+        @apply w-[3.4rem] h-[3.4rem] rounded-[0.5rem] bg-white;
+
+        @screen tablet {
+          @apply w-[4.1rem] h-[4.1rem];
+        }
+      }
+      .span {
+        width: 1.7rem;
+      }
+      .span:nth-child(1) {
+        transform: rotateZ(42.19deg);
+      }
+
+      .span:nth-child(2) {
+        @apply opacity-0;
+      }
+
+      .span:nth-child(3) {
+        transform: rotateZ(-42.19deg);
+      }
+    }
+    @screen tablet {
+      @apply w-[8rem];
+    }
+  }
+
+  &.close {
+    width: var(--menu-size);
+    height: var(--menu-size);
+
+    @apply bg-transparent relative cursor-pointer flex justify-center items-center;
+    @screen laptop {
+      @apply hidden;
+    }
+    .span {
+      width: 2.5rem;
+      height: 0.25rem;
+      border-radius: 2px;
+      @apply bg-white inline-block absolute;
+    }
+
+    .span:nth-child(1) {
+      transform: rotateZ(42.19deg);
+    }
+
+    .span:nth-child(2) {
+      @apply hidden;
+    }
+
+    .span:nth-child(3) {
+      transform: rotateZ(-42.19deg);
+    }
+  }
+}
