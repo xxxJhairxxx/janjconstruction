@@ -1,14 +1,148 @@
 .about {
+  @screen laptop {
+    margin-top: calc(-13.5rem * var(--scale));
+  }
+
+  &-banner {
+    @apply hidden relative;
+
+    &::after {
+      content: '';
+      @apply absolute w-full h-full;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    &-img {
+      @apply w-full h-full;
+    }
+
+    @screen laptop {
+      @apply flex;
+      height: calc(33.4rem * var(--scale));
+    }
+  }
+
   &-description-one {
-    @apply pt-[6.2rem] pb-[3.76rem];
+    @apply pt-[6.2rem] pb-[3.76rem] relative z-30;
     background-image: url('/img/about-bg.webp');
     background-size: cover;
     background-position: center;
     border-radius: 0 0 1rem 1rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
 
+    @screen laptop {
+      @apply rounded-[1rem] mx-auto py-0;
+      background-image: url('/img/about-bg-desktop.webp');
+      max-width: calc(180rem * var(--scale));
+      margin-top: calc(-11.3rem * var(--scale));
+    }
+
+    .container-general.about-one {
+      @screen laptop {
+        @apply flex justify-between;
+      }
+    }
+
+    &-img {
+      @apply hidden;
+
+      @screen laptop {
+        @apply flex;
+        width: calc(64.9rem * var(--scale));
+        height: calc(83.3rem * var(--scale));
+      }
+    }
+
+    &-text {
+      @screen laptop {
+        @apply flex flex-col justify-center;
+      }
+
+      p {
+        @apply font-primary font-light text-[1.5rem] leading-[2.32rem] text-black mt-[1.74rem];
+
+        @screen laptop {
+          width: calc(64.9rem * var(--scale));
+          font-size: calc(1.9rem * var(--scale));
+          line-height: calc(3.32rem * var(--scale));
+          margin-top: calc(2.8rem * var(--scale));
+        }
+      }
+    }
+  }
+
+  &-description-two {
+    @apply pt-[3.9rem] pb-[4.71rem] relative z-50;
+
+    @screen laptop {
+      padding-top: calc(15.3rem * var(--scale));
+      padding-bottom: calc(35.5rem * var(--scale));
+    }
+
+    .container-general.about-two {
+      @screen laptop {
+        @apply flex justify-between;
+      }
+    }
+
     p {
-      @apply font-primary font-light text-[1.5rem] leading-[2.32rem] text-black mt-[1.54rem];
+      @apply font-primary font-light text-[1.31rem] leading-[2.29rem] text-black mt-[1.96rem];
+
+      @screen laptop {
+        width: calc(64.9rem * var(--scale));
+        font-size: calc(1.9rem * var(--scale));
+        line-height: calc(3.32rem * var(--scale));
+        margin-top: calc(2.8rem * var(--scale));
+      }
+
+      &:nth-child(3) {
+        strong {
+          @apply font-bold text-[1.31rem] leading-[2.29rem];
+
+          @screen laptop {
+            font-size: calc(1.9rem * var(--scale));
+            line-height: calc(3.32rem * var(--scale));
+          }
+        }
+      }
+    }
+
+    ol {
+      @apply mt-[1rem];
+      counter-reset: contador;
+
+      @screen laptop {
+        marin-top: calc(1.2rem * var(--scale));
+      }
+
+      li {
+        @apply relative font-primary font-light text-[1.31rem] leading-[2.68rem] text-black pl-[1.5rem];
+
+        @screen laptop {
+          font-size: calc(1.9rem * var(--scale));
+          line-height: calc(3.89rem * var(--scale));
+          padding-left: calc(2rem * var(--scale));
+        }
+
+        &::before {
+          counter-increment: contador;
+          content: counter(contador) '.';
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+
+    &-img {
+      @apply hidden;
+
+      @screen laptop {
+        @apply flex relative;
+        top: calc(-25rem * var(--scale));
+        width: calc(64.9rem * var(--scale));
+        height: calc(89.9rem * var(--scale));
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+      }
     }
   }
 }

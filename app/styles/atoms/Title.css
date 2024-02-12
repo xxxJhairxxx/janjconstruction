@@ -1,35 +1,35 @@
 /** @format */
 
 .general_title {
-	@apply uppercase;
-	
-	&_subtitle{
-		@apply text-[1.3rem] font-semibold;
-		&:after{
-			@apply inline-block ml-[1rem] mb-[0.3rem] bg-secondary w-[5rem] h-[0.2rem] rounded-lg;
-			content:"";
-		}
+  @apply uppercase;
 
-		&.yellow{
-			@apply text-primary;
-			&:after{
-				@apply bg-primary;
-			}
-		}
-	}
-	&_title{
-		@apply text-[2.8rem]  text-secondary font-primary leading-[1.1] relative font-[800];
-		&.yellow{
-			@apply text-primary;
-		}
-	}
+  &_subtitle {
+    @apply text-[1.3rem] font-semibold;
+    &:after {
+      @apply inline-block ml-[1rem] mb-[0.3rem] bg-secondary w-[5rem] h-[0.2rem] rounded-lg;
+      content: '';
+    }
 
-	&.center {
-		@apply text-center;
-		.general_title_subtitle{
-			&:after{
-				content: none;
-			}
-		}
-	}
+    &.yellow {
+      @apply text-primary;
+      &:after {
+        @apply bg-primary;
+      }
+    }
+  }
+  &_title {
+    @apply text-[2.8rem] text-black font-secondary leading-[1.1] relative font-bold;
+    &.yellow {
+      @apply text-primary;
+    }
+  }
+
+  &.center {
+    @apply text-center;
+    .general_title_subtitle {
+      &:after {
+        content: none;
+      }
+    }
+  }
 }

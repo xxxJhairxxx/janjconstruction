@@ -82,8 +82,7 @@
   }
 
   @screen laptop {
-    @apply static inset-auto rounded-xl p-0  mx-auto flex items-center justify-end transform-none bg-transparent;
-    height: calc(9.4rem * var(--scale));
+    @apply static inset-auto rounded-xl p-0  mx-auto flex items-center justify-end transform-none bg-transparent h-full;
     width: calc(150rem * var(--scale));
 
     &-ctn {

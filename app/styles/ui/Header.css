@@ -6,6 +6,7 @@
 
   &.top {
     @screen laptop {
+      @apply bg-[#302E5D];
       @apply bg-white;
       box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
@@ -86,7 +87,7 @@
   @screen laptop {
     @apply bg-transparent flex items-center !sticky rounded-none;
     transition: background-color 0.25s ease;
-    height: calc(9.5rem * var(--scale));
+    height: calc(13rem * var(--scale));
     left: 0;
     transform: translateX(0);
     top: 0;
@@ -95,7 +96,7 @@
     box-shadow: none;
 
     &-ctn {
-      height: auto;
+      height: 100%;
       display: flex;
       max-width: unset !important;
     }

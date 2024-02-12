@@ -5,7 +5,7 @@
   }
   @screen laptop {
     @apply w-[80%];
-    max-width: calc(135rem * var(--scale));
+    max-width: calc(143rem * var(--scale));
     padding-left: calc(2rem * var(--scale));
     padding-right: calc(2rem * var(--scale));
   }
