@@ -16,6 +16,7 @@ const config: Config = {
       fontFamily: {
         primary: ['var(--font-roboto)'],
         secondary: ['var(--font-rubik)'],
+        tertiary: ['var(--font-poppins)'],
       },
       screens: {
         phone: '414px',
@@ -31,4 +32,3 @@ const config: Config = {
   plugins: [],
 }
 export default config
-

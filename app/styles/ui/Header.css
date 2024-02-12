@@ -1,5 +1,5 @@
 .Header {
-  @apply h-[6.3rem] w-full top-0 flex items-center fixed bg-white;
+  @apply h-[5.5rem] w-full top-0 flex items-center fixed bg-[#302E5D];
   transition: background 0.8s ease;
   z-index: 400;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -12,23 +12,23 @@
 
   &-Logo {
     @apply hidden;
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
     @screen laptop {
       @apply flex items-start absolute z-[3];
-      height: calc(17.6rem * var(--scale));
-      width: calc(20.3rem * var(--scale));
-      top: calc(-3.1rem * var(--scale));
+      height: calc(8.2rem * var(--scale));
+      width: calc(24.63rem * var(--scale));
+      top: calc(4.1rem * var(--scale));
       left: 0;
-      &.header-fixed{
-        padding-top: calc(.5rem * var(--scale));
+      /* &.header-fixed {
+        padding-top: calc(0.5rem * var(--scale));
         width: calc(15rem * var(--scale));
         height: auto;
-      }
+      } */
     }
   }
 
   &-Logo2 {
-    @apply flex w-[9.1rem] h-[7.88rem] absolute left-[2.4rem] top-[0.7rem];
+    @apply flex absolute left-[1.3rem] top-[0.7rem];
 
     @screen laptop {
       @apply hidden;
@@ -63,7 +63,7 @@
     }
   }
   &-ctn {
-    @apply h-full w-full mx-auto relative;
+    @apply h-full !w-full mx-auto relative;
   }
 
   &-overlay {

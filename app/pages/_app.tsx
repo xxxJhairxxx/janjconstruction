@@ -14,7 +14,6 @@ export default function App({
   Component,
   pageProps,
 }: AppProps<CustomPageProps>) {
-  console.log(pageProps.generals)
   return (
     <>
       <Head>

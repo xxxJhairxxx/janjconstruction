@@ -2,8 +2,8 @@
   @apply h-full;
   --menu-size: 5.8rem;
   &.hamburguer {
-    height: 6.3rem;
-    width: 6rem;
+    height: 5.5rem;
+    width: 5.5rem;
     transition: background-color 0.4s ease;
     @apply bg-transparent flex justify-center items-center cursor-pointer;
     @screen laptoplg {
@@ -11,10 +11,10 @@
     }
 
     .span {
-      height: 0.2rem;
-      width: 2.17rem;
+      height: 0.29rem;
+      width: 2.35rem;
       transition: transform 0.4s ease;
-      @apply bg-secondary inline-block absolute mx-auto rounded-[1rem];
+      @apply bg-primary inline-block absolute mx-auto rounded-[1rem];
     }
     .span:nth-child(1) {
       transform: translateY(-0.8rem);
@@ -28,7 +28,7 @@
       @apply bg-transparent;
       &::before {
         content: '';
-        @apply w-[3.4rem] h-[3.4rem] rounded-[0.5rem] bg-white;
+        @apply w-[3.4rem] h-[3.4rem] rounded-[0.5rem] bg-[#302E5D];
 
         @screen tablet {
           @apply w-[4.1rem] h-[4.1rem];

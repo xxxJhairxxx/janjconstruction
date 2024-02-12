@@ -1,6 +1,6 @@
 .logoCont {
-  @apply cursor-pointer;
+  @apply cursor-pointer w-[12.5rem] h-[4rem];
   img {
-    @apply w-full h-full object-cover;
+    @apply w-full h-full object-contain;
   }
 }
