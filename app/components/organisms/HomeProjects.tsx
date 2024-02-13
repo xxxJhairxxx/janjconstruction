@@ -16,6 +16,9 @@ const HomeWeWord = ({ title, subtitle, text }: Props) => {
 				<Title title={title} subtitle={subtitle} center />
 				<p>{text}</p>
 			</div>
+			<div className='HomeWeWord__gallery'>
+				
+			</div>
 		</section>
 	);
 };
