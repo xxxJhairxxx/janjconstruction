@@ -12,6 +12,7 @@ import {
 import { baseApi } from '@/lib/baseApi'
 import { useNavbarContext } from '@context/navbar.context'
 import axios from 'axios'
+import ModalConfimation from './ModalConfirmation'
 
 interface ContactFormProps {
   title: string
@@ -37,6 +38,7 @@ export default function ContactForm({ title, form }: ContactFormProps) {
     message: '',
   })
   const [servicesForm, setServicesForm] = useState([])
+  const [showModal, setShowModal] = useState(false)
 
   const { multilanguage } = useGenerals()
   const { showContact, setShowContact, serviceSelected } = useNavbarContext()
@@ -46,10 +48,21 @@ export default function ContactForm({ title, form }: ContactFormProps) {
     setShowCaptchaError(false)
   }
 
+  const openModal = () => {
+    setShowModal(true)
+    document.body.style.overflow = 'hidden'
+  }
+
+  const closeModal = () => {
+    setShowModal(false)
+    setShowContact(false)
+    document.body.style.overflow = ''
+  }
+
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
+    formState: { errors },
     watch,
     setValue,
     reset,
@@ -75,12 +88,13 @@ export default function ContactForm({ title, form }: ContactFormProps) {
       setTimeout(() => {
         setSending(false)
         reset()
-        setSuccessForm(true)
+        // setSuccessForm(true)
+        openModal()
       }, 2500)
 
-      setTimeout(() => {
-        setSuccessForm(false)
-      }, 5000)
+      // setTimeout(() => {
+      //   setSuccessForm(false)
+      // }, 5000)
     } catch (error) {
       console.error(error)
     }
@@ -280,13 +294,14 @@ export default function ContactForm({ title, form }: ContactFormProps) {
           </button>
         </div>
 
-        <div className='messages'>
+        {/* <div className='messages'>
           {successForm && (
-            <span className={`feedback-message init`}>
-              {messages.mail_sent_ok}
-            </span>
+            <span className={`feedback-message`}>{messages.mail_sent_ok}</span>
           )}
-        </div>
+        </div> */}
+        {showModal && (
+          <ModalConfimation closeModal={closeModal} showModal={showModal} />
+        )}
       </form>
     </div>
   )

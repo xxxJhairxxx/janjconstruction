@@ -66,19 +66,28 @@
     }
 
     button {
-      @apply bg-red-400 text-[1.6rem] mt-2 mb-6 w-fit rounded-full px-[3rem] py-[1rem];
-      &:before {
-        content: attr(data-title);
-      }
+      @apply bg-red-400 text-[1.6rem] mt-2 mb-6 w-fit rounded-full px-[3rem] py-[1rem] flex items-center justify-center gap-[0.5rem];
+
       @screen laptop {
         @apply px-0 py-0;
         font-size: calc(1.5rem * var(--scale));
         width: calc(5rem * var(--scale));
         height: calc(5rem * var(--scale));
+      }
 
-        &:before {
-          content: '\e902';
-          font-family: 'icomoon';
+      .btn-span {
+        @apply font-primary font-normal text-[1.5rem] leading-[1.5rem];
+
+        @screen laptop {
+          @apply hidden;
+        }
+      }
+
+      i {
+        @apply text-[1.3rem];
+
+        @screen laptop {
+          font-size: calc(1.75rem * var(--scale));
         }
       }
     }

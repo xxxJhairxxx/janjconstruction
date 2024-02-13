@@ -34,4 +34,5 @@ export interface LabelsButtons {
   lbl_read_more: string
   lbl_send: string
   lbl_see_more: string
+  lbl_accept: string
 }

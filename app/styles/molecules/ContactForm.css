@@ -92,6 +92,10 @@
         line-height: calc(4rem * var(--scale));
       }
 
+      &.error {
+        border-bottom: 1px solid red;
+      }
+
       &::placeholder {
         @apply font-light text-[1.7rem] leading-[1.7rem];
         color: rgba(0, 0, 0, 0.5);
@@ -155,6 +159,11 @@
     button {
       @apply rounded-full h-[3.65rem] px-[3.5rem] flex items-center justify-center uppercase font-primary font-medium text-[1.34rem] leading-[1.34rem] text-white;
       background: linear-gradient(#ff1400, #be0f00);
+      transition: all 0.3s ease;
+
+      &:hover {
+        @apply bg-black;
+      }
 
       @screen laptop {
         height: calc(5.8rem * var(--scale));
@@ -174,7 +183,7 @@
     }
   }
 
-  .feedback-message {
+  /* .feedback-message {
     color: #8fbc8f;
     transition: all 0.3s ease-in-out;
     font-size: 1.5rem;
@@ -189,25 +198,5 @@
     @screen laptop {
       font-size: calc(1.9rem * var(--scale));
     }
-  }
-
-  .select-service {
-    @apply relative w-full;
-    @screen laptop {
-    }
-    z-index: 1;
-    &::before {
-      content: '\e900';
-      font-family: 'icomoon';
-      position: absolute;
-      @apply text-[0.8rem] top-[1.8rem] right-[1.5rem];
-      color: #0080cf;
-
-      @screen laptop {
-        right: calc(1.91rem * var(--scale));
-        font-size: calc(1rem * var(--scale));
-        top: calc(1.9rem * var(--scale));
-      }
-    }
-  }
+  } */
 }

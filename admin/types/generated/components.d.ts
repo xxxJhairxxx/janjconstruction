@@ -169,12 +169,14 @@ export interface LabelButtonsLabelsButton extends Schema.Component {
   collectionName: 'components_label_buttons_labels_buttons';
   info: {
     displayName: 'labels button';
+    description: '';
   };
   attributes: {
     lbl_contact_us: Attribute.String;
     lbl_read_more: Attribute.String;
     lbl_send: Attribute.String;
     lbl_see_more: Attribute.String;
+    lbl_accept: Attribute.String;
   };
 }
 

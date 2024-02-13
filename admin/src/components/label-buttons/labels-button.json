@@ -1,7 +1,8 @@
 {
   "collectionName": "components_label_buttons_labels_buttons",
   "info": {
-    "displayName": "labels button"
+    "displayName": "labels button",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -15,6 +16,9 @@
       "type": "string"
     },
     "lbl_see_more": {
+      "type": "string"
+    },
+    "lbl_accept": {
       "type": "string"
     }
   }

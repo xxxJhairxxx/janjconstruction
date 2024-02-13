@@ -61,6 +61,7 @@ const initialState: ControllerState = {
       lbl_read_more: '',
       lbl_send: '',
       lbl_see_more: '',
+      lbl_accept: '',
     },
     contact_form: {
       id: 1,

@@ -80,14 +80,15 @@ module.exports = (plugin) => {
 
       const body = `
       <br>
-      From: ${name} / ${email} <br>
+      From: ${name ? name + "/" : ""} ${email} <br>
       Subject: Contact Form / JAJ Contruction  <br>
       <br>
       Contact Info--- <br>
       Email: ${email} <br>
-      Phone: ${phone} <br>
-      Service: ${services}<br>
-      Message: ${message}<br>
+      ${phone ? `Phone: ${phone} <br>` : ""}
+      ${services ? `Service: ${services} <br>` : ""}
+      ${message ? `Message: ${message} <br>` : ""}
+
       <br>
       --
       This e-mail was send from a contact form on JAJ Contruction
