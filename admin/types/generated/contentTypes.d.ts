@@ -934,9 +934,9 @@ export interface ApiMultilanguageMultilanguage extends Schema.SingleType {
   attributes: {
     menu: Attribute.Component<'menus.menu', true>;
     labels_buttons: Attribute.Component<'label-buttons.labels-button'>;
-    lbl_service: Attribute.String;
     contact_form: Attribute.Component<'forms.contact-form'>;
     footer_form: Attribute.Component<'footer.contact-footer'>;
+    labels: Attribute.Component<'labels.labels'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

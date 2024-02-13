@@ -7,10 +7,10 @@ export interface MultilanguageData {
   createdAt: string
   updatedAt: string
   publishedAt: string
-  lbl_service: string
   menu: Menu[]
   labels_buttons: LabelsButtons
   lbl_error_recaptcha: string
+  lbl_service: string
 }
 
 export interface Menu {

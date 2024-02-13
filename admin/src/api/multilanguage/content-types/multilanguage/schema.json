@@ -24,9 +24,6 @@
       "repeatable": false,
       "component": "label-buttons.labels-button"
     },
-    "lbl_service": {
-      "type": "string"
-    },
     "contact_form": {
       "displayName": "ContactForm",
       "type": "component",
@@ -38,6 +35,12 @@
       "type": "component",
       "repeatable": false,
       "component": "footer.contact-footer"
+    },
+    "labels": {
+      "displayName": "labels",
+      "type": "component",
+      "repeatable": false,
+      "component": "labels.labels"
     }
   }
 }

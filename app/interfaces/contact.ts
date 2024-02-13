@@ -1,26 +1,17 @@
-import { InputForm } from './shared'
-
-export interface Contact {
-  data: ContactData
-}
-
-export interface ContactData {
-  id: number
+export interface ContactForm {
   title: string
-  createdAt: string
-  updatedAt: string
-  publishedAt: string
-  form: Form
-}
-
-export interface Form {
-  id: number
   name: InputForm
   email: InputForm
   phone: InputForm
   services: InputForm
   message: InputForm
   messages: Messages
+}
+
+export interface InputForm {
+  id: number
+  name: string
+  label: string
 }
 
 export interface Messages {

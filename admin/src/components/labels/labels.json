@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_labels_labels",
+  "info": {
+    "displayName": "labels"
+  },
+  "options": {},
+  "attributes": {
+    "lbl_service": {
+      "type": "string"
+    },
+    "lbl_error_recaptcha": {
+      "type": "string"
+    }
+  }
+}

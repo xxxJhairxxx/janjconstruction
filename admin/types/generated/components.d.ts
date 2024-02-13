@@ -178,6 +178,17 @@ export interface LabelButtonsLabelsButton extends Schema.Component {
   };
 }
 
+export interface LabelsLabels extends Schema.Component {
+  collectionName: 'components_labels_labels';
+  info: {
+    displayName: 'labels';
+  };
+  attributes: {
+    lbl_service: Attribute.String;
+    lbl_error_recaptcha: Attribute.String;
+  };
+}
+
 export interface MenusMenu extends Schema.Component {
   collectionName: 'components_menus_menus';
   info: {
@@ -218,6 +229,7 @@ declare module '@strapi/types' {
       'home-sections.home-sections': HomeSectionsHomeSections;
       'home-sections.home-we-work': HomeSectionsHomeWeWork;
       'label-buttons.labels-button': LabelButtonsLabelsButton;
+      'labels.labels': LabelsLabels;
       'menus.menu': MenusMenu;
       'shared.social-networks': SharedSocialNetworks;
     }
