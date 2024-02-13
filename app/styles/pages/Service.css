@@ -1,10 +1,30 @@
 /** @format */
 
 .Service {
-	@apply bg-primary px-[3rem] py-[4rem];
+	@apply bg-primary px-[3rem] py-[4rem] relative;
+
+	@screen laptop {
+		@apply px-0;
+		padding-top: calc(25rem * var(--scale));
+		margin-top: calc(-13.5rem * var(--scale));
+	}
+	&-image {
+		@apply hidden;
+
+		@screen laptop {
+			@apply block w-1/2 h-full absolute top-0 right-0 z-[0];
+			clip-path: polygon(0% 0, 100% 0, 100% 100%, 30% 100%);
+		}
+	}
 
 	&__info {
+		@screen laptop {
+			@apply mx-auto;
+			width: calc(135rem * var(--scale));
+			padding-block: calc(3rem * var(--scale));
+		}
 		&__text {
+			width: calc(65rem * var(--scale));
 			p {
 				@apply pt-[2rem] pb-[3rem];
 			}
@@ -13,46 +33,61 @@
 
 	&__CardsContainer {
 		@apply grid grid-cols-2 gap-5;
+		@screen laptop {
+			@apply w-[100%] flex bg-red-500  z-20  overflow-x-scroll;
+		}
 
 		&__cards {
 			@apply relative h-[10rem] text-white  flex flex-col justify-center;
 
+			&:before {
+				@apply absolute z-[5] left-0 top-0 w-full h-full;
+				background: linear-gradient(
+					180deg,
+					rgba(255, 255, 255, 0) 0%,
+					rgba(0, 0, 0, 0.4962359943977591) 50%
+				);
+				content: '';
+			}
+
 			@screen tablet {
 				@apply h-[17rem];
 			}
+			@screen laptop {
+				@apply z-20;
+				height: calc(30rem * var(--scale));
+				width: calc(23rem * var(--scale));
+                &-btn{
+                    @apply cursor-pointer block w-full h-full top-0 left-0 z-[10] absolute;
+                }
+            }
 
 			&-title {
 				@apply z-10 w-full px-5 uppercase leading-[1.2];
 				span {
 					@apply inline text-left text-[1.1rem];
-                    @screen tablet {
-                        @apply text-[1.5rem];
-                    }
-                }
+					@screen tablet {
+						@apply text-[1.5rem];
+					}
+				}
 				h1 {
 					@apply font-[600] text-[1.4rem];
-                    @screen tablet {
-                        @apply text-[2rem];
-                    }
-                }
+					@screen tablet {
+						@apply text-[2rem];
+					}
+				}
 			}
 
 			&-thumb {
 				@apply absolute w-full h-full z-[1];
-				&:before {
-					@apply absolute left-0 top-0 w-full h-full;
-					background: linear-gradient(
-						180deg,
-						rgba(255, 255, 255, 0) 0%,
-						rgba(0, 0, 0, 0.4962359943977591) 50%
-					);
-					content: '';
-				}
 			}
 		}
 
 		&-btn {
 			@apply col-span-2 py-8;
+            @screen laptop {
+                @apply hidden ;
+            }
 		}
 	}
 }

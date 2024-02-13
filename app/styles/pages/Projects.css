@@ -1,0 +1,10 @@
+.Project{
+    @apply px-10 py-20;
+
+    &__title{
+
+        p{
+            @apply text-center my-8;
+        }
+    }
+}

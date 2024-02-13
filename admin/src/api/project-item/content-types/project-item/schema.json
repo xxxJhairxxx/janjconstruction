@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "project_items",
+  "info": {
+    "singularName": "project-item",
+    "pluralName": "project-items",
+    "displayName": "Project-items"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "place": {
+      "type": "string"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

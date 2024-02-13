@@ -1,5 +1,5 @@
 {
-  "kind": "collectionType",
+  "kind": "singleType",
   "collectionName": "projects",
   "info": {
     "singularName": "project",
@@ -16,6 +16,9 @@
     },
     "subtitle": {
       "type": "string"
+    },
+    "text": {
+      "type": "text"
     }
   }
 }
