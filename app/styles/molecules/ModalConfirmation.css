@@ -38,6 +38,12 @@
       background: linear-gradient(#ff1400, #be0f00);
       transition: all 0.3s ease;
 
+      @screen laptop {
+        font-size: calc(1.9rem * var(--scale));
+        line-height: calc(2.5rem * var(--scale));
+        /* height: calc(2.5rem * var(--scale)); */
+      }
+
       &:hover {
         @apply bg-black;
       }
