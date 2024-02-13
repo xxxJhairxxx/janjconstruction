@@ -1,0 +1,58 @@
+/** @format */
+
+.Service {
+	@apply bg-primary px-[3rem] py-[4rem];
+
+	&__info {
+		&__text {
+			p {
+				@apply pt-[2rem] pb-[3rem];
+			}
+		}
+	}
+
+	&__CardsContainer {
+		@apply grid grid-cols-2 gap-5;
+
+		&__cards {
+			@apply relative h-[10rem] text-white  flex flex-col justify-center;
+
+			@screen tablet {
+				@apply h-[17rem];
+			}
+
+			&-title {
+				@apply z-10 w-full px-5 uppercase leading-[1.2];
+				span {
+					@apply inline text-left text-[1.1rem];
+                    @screen tablet {
+                        @apply text-[1.5rem];
+                    }
+                }
+				h1 {
+					@apply font-[600] text-[1.4rem];
+                    @screen tablet {
+                        @apply text-[2rem];
+                    }
+                }
+			}
+
+			&-thumb {
+				@apply absolute w-full h-full z-[1];
+				&:before {
+					@apply absolute left-0 top-0 w-full h-full;
+					background: linear-gradient(
+						180deg,
+						rgba(255, 255, 255, 0) 0%,
+						rgba(0, 0, 0, 0.4962359943977591) 50%
+					);
+					content: '';
+				}
+			}
+		}
+
+		&-btn {
+			@apply col-span-2 py-8;
+		}
+	}
+}

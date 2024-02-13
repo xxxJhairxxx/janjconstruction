@@ -3,6 +3,10 @@
 .Footer {
   @apply bg-[#231F20] text-white px-[3rem] py-[5rem];
   background-image: url('/img/footer-decore.webp');
+  @screen laptop {
+    padding-top: calc(8rem * var(--scale));
+    padding-bottom: calc(15rem * var(--scale));
+  }
   &__title {
     @apply text-center;
 
@@ -13,7 +17,7 @@
       }
     }
     p {
-      @apply text-center max-w-[45rem] mx-auto;
+      @apply text-center max-w-[45rem] pb-5 pt-3 mx-auto;
       @screen tablet {
         @apply pb-3 pt-1;
       }
@@ -26,17 +30,68 @@
   &__form {
     @apply flex flex-col items-center gap-5 py-5 mx-auto max-w-[50rem];
 
-    input {
-      @apply py-4 px-10 rounded-full w-full text-[1.7rem];
+    @screen laptop {
+      @apply flex-row mt-0;
+      font-size: calc(1.7rem * var(--scale));
+      max-width: calc(100rem * var(--scale));
+      gap: calc(1rem * var(--scale));
+      margin-bottom: calc(4rem * var(--scale));
+    }
+
+    &__inputs {
+      @apply flex flex-col text-black gap-5 w-full;
+
+      @screen laptop {
+        @apply flex-row items-center gap-0 justify-center relative rounded-full  flex-1;
+        &:after {
+          @apply bg-[#878787] w-[0.2rem] h-[80%] absolute;
+          content: '';
+          width: calc(0.2rem * var(--scale));
+        }
+      }
+      input {
+        @apply py-4 px-10 rounded-full w-full text-[1.6rem];
+        @screen laptop {
+          @apply flex-1;
+          font-size: calc(1.7rem * var(--scale));
+          padding: calc(1.3rem * var(--scale)) calc(3.5rem * var(--scale));
+          &:nth-child(1) {
+            @apply rounded-r-none;
+          }
+          &:nth-child(2) {
+            @apply rounded-l-none relative;
+          }
+        }
+      }
     }
 
     button {
-      @apply bg-red-400 text-[1.6rem] w-fit rounded-full px-[3rem] py-[1rem];
+      @apply bg-red-400 text-[1.6rem] mt-2 mb-6 w-fit rounded-full px-[3rem] py-[1rem];
+      &:before {
+        content: attr(data-title);
+      }
+      @screen laptop {
+        @apply px-0 py-0;
+        font-size: calc(1.5rem * var(--scale));
+        width: calc(5rem * var(--scale));
+        height: calc(5rem * var(--scale));
+
+        &:before {
+          content: '\e902';
+          font-family: 'icomoon';
+        }
+      }
     }
   }
 
   &__info {
     @apply flex flex-wrap gap-y-1 gap-x-6 justify-center;
+
+    @screen laptop {
+      @apply mx-auto;
+      width: calc(60rem * var(--scale));
+      column-gap: calc(4rem * var(--scale));
+    }
     a,
     address {
       @apply text-[1.3rem] not-italic font-[200];
@@ -49,10 +104,16 @@
     &-email:before {
       @apply mr-3 text-[1.2rem] font-['icomoon'];
       content: '\e901';
+      @screen laptop {
+        font-size: calc(1.5rem * var(--scale));
+      }
     }
     &-phone:before {
       @apply mr-3 text-[1.3rem] font-['icomoon'];
       content: '\e900';
+      @screen laptop {
+        font-size: calc(1.7rem * var(--scale));
+      }
     }
   }
 }
