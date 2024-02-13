@@ -4,6 +4,7 @@
 	@apply my-10;
 	&__container {
 		@apply bg-primary px-[3rem] py-[2rem] rounded-2xl;
+		background-image: url("/img/about-bg-desktop.webp");
 
 		&__info {
 			p {
@@ -20,5 +21,23 @@
 				@apply h-[30rem];
 			}
 		}
+		@screen laptop {
+			@apply flex w-full items-center;
+			gap: calc(15rem * var(--scale));
+			max-width: calc(182rem * var(--scale));
+			padding: calc(13rem * var(--scale)) calc(20rem * var(--scale));
+
+			&__info {
+				@apply flex-1;
+			}
+			&__thumb {
+				width: calc(62rem * var(--scale));
+				height: calc(50rem * var(--scale));
+			}
+		}
+	}
+
+	@screen laptop {
+		margin-block: calc(5rem * var(--scale));
 	}
 }

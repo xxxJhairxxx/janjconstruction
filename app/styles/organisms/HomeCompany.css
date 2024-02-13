@@ -1,7 +1,8 @@
 /** @format */
 
 .HomeCompany {
-	@apply bg-secondary py-[5rem];
+	@apply bg-secondary  py-[5rem];
+	background-image: url("/img/company-bg.webp");
 
 	&__container {
 		&__thumb {
