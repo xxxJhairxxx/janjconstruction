@@ -105,6 +105,11 @@ export default function ContactForm({ title, form }: ContactFormProps) {
     }
   }
 
+  const handleClose = () => {
+    setShowContact(false)
+    document.body.style.overflow = ''
+  }
+
   useEffect(() => {
     if (
       dataForm.name !== '' &&
@@ -118,7 +123,7 @@ export default function ContactForm({ title, form }: ContactFormProps) {
 
   return (
     <div className={`contact ${showContact ? 'show' : ''}`}>
-      <button className='contact-close' onClick={() => setShowContact(false)}>
+      <button className='contact-close' onClick={handleClose}>
         <i className='icon-cross'></i>
       </button>
 
