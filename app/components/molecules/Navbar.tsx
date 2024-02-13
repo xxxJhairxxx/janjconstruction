@@ -13,11 +13,16 @@ interface NavbarProps {
 export const Navbar: FC<NavbarProps> = ({ isMenuOpen, closeMenu }) => {
   const { multilanguage } = useGenerals()
   const { asPath } = useRouter()
-  const { isTopZero } = useNavbarContext()
+  const { isTopZero, setShowContact } = useNavbarContext()
 
   const half = 4
   const menuPartOne = [...multilanguage.menu].slice(0, half)
   const menuPartTwo = [...multilanguage.menu].slice(half)
+
+  const handleClick = () => {
+    setShowContact(true)
+    closeMenu()
+  }
 
   return (
     <nav
@@ -42,11 +47,7 @@ export const Navbar: FC<NavbarProps> = ({ isMenuOpen, closeMenu }) => {
           ))}
 
           {menuPartTwo.map(({ id, label, url }) => (
-            <li
-              key={id}
-              onClick={() => alert('contact')}
-              className='Navbar-ul-link'
-            >
+            <li key={id} onClick={handleClick} className='Navbar-ul-link'>
               <span className={`Navbar-ul-li ${url === asPath && 'isActive'}`}>
                 {label}
               </span>

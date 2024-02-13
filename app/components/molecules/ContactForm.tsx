@@ -10,6 +10,7 @@ import {
   phonePattern,
 } from '@/lib/formUtils'
 import { baseApi } from '@/lib/baseApi'
+import { useNavbarContext } from '@context/navbar.context'
 
 interface ContactFormProps {
   title: string
@@ -35,6 +36,7 @@ export default function ContactForm({ title, form }: ContactFormProps) {
   })
 
   const { multilanguage } = useGenerals()
+  const { showContact, setShowContact } = useNavbarContext()
 
   const onChangeRecaptcha = (response: any) => {
     setCaptchaResponse(response)
@@ -115,15 +117,16 @@ export default function ContactForm({ title, form }: ContactFormProps) {
   }, [dataForm])
 
   return (
-    <div className='contact'>
+    <div className={`contact ${showContact ? 'show' : ''}`}>
+      <button className='contact-close' onClick={() => setShowContact(false)}>
+        <i className='icon-cross'></i>
+      </button>
+
       <h4 className='contact-title'>{title}</h4>
 
       <form onSubmit={handleSubmit(onSubmit)} className='contactForm'>
         <div className='contactForm-input'>
-          <label htmlFor={name.name}>
-            {name.label}
-            <span>*</span>
-          </label>
+          <label htmlFor={name.name}>{name.label}</label>
           <input
             {...register('name', {
               required: true,
@@ -143,10 +146,7 @@ export default function ContactForm({ title, form }: ContactFormProps) {
         </div>
 
         <div className='contactForm-input'>
-          <label htmlFor={email.name}>
-            {email.label}
-            <span>*</span>
-          </label>
+          <label htmlFor={email.name}>{email.label}</label>
           <input
             {...register('email', {
               required: true,
@@ -165,10 +165,7 @@ export default function ContactForm({ title, form }: ContactFormProps) {
         </div>
 
         <div className='contactForm-input'>
-          <label htmlFor={phone.name}>
-            {phone.label}
-            <span>*</span>
-          </label>
+          <label htmlFor={phone.name}>{phone.label}</label>
           <input
             {...register('phone', {
               required: true,
@@ -189,11 +186,11 @@ export default function ContactForm({ title, form }: ContactFormProps) {
 
         <div className='contactForm-input'>
           <label htmlFor={message.name}>{message.label}</label>
-          <input
+          <textarea
             {...register('message', {
               required: false,
             })}
-            className={`contactForm-input-input ${
+            className={`contactForm-input-input textarea ${
               errors.message ? 'error' : ''
             }`}
           />

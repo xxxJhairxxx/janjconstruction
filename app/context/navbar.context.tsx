@@ -17,6 +17,8 @@ interface NavbarContextType {
   setScrolltoSectionFromOtherPage: Dispatch<SetStateAction<string>>
   isTopZero: boolean
   setIsTopZero: Dispatch<SetStateAction<boolean>>
+  showContact: boolean
+  setShowContact: Dispatch<SetStateAction<boolean>>
 }
 
 const NavbarContext = createContext<NavbarContextType>({
@@ -28,6 +30,8 @@ const NavbarContext = createContext<NavbarContextType>({
   setScrolltoSectionFromOtherPage: () => '',
   isTopZero: false,
   setIsTopZero: () => '',
+  showContact: false,
+  setShowContact: () => '',
 })
 
 export const NavbarProvider: FC<PropsWithChildren> = ({ children }) => {
@@ -36,6 +40,7 @@ export const NavbarProvider: FC<PropsWithChildren> = ({ children }) => {
   const [scrolltoSectionFromOtherPage, setScrolltoSectionFromOtherPage] =
     useState<string>('')
   const [isTopZero, setIsTopZero] = useState(false)
+  const [showContact, setShowContact] = useState(false)
 
   return (
     <NavbarContext.Provider
@@ -48,6 +53,8 @@ export const NavbarProvider: FC<PropsWithChildren> = ({ children }) => {
         setScrolltoSectionFromOtherPage,
         isTopZero,
         setIsTopZero,
+        showContact,
+        setShowContact,
       }}
     >
       {children}

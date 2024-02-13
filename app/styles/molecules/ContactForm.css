@@ -1,14 +1,37 @@
-.contactForm {
-  @apply bg-white mt-[2.8rem] pt-[3.4rem] pb-[3.9rem]  z-30 rounded-[1rem] absolute;
+.contact {
+  @apply absolute w-full h-full pt-[2.7rem] px-[1.9rem] flex flex-col items-center;
+  z-index: 999;
+  background-image: url('/img/contact-bg.webp');
+  background-size: cover;
+  background-position: center;
+  top: -330rem;
+  transition: all 0.6s ease-in-out;
 
   @screen laptop {
-    @apply mt-0 rounded-[2rem];
-    width: calc(77.4rem * var(--scale));
-    padding-top: calc(5.1rem * var(--scale));
-    padding-bottom: calc(4.1rem * var(--scale));
-    padding-left: calc(5rem * var(--scale));
-    padding-right: calc(5rem * var(--scale));
-    filter: drop-shadow(0px 2px 20px rgba(0, 0, 0, 0.15));
+    background-image: url('/img/contact-bg-desktop.webp');
+  }
+
+  &.show {
+    top: 0;
+  }
+
+  &-close {
+    @apply bg-white rounded-full w-[3.85rem] h-[3.85rem] flex items-center justify-center;
+
+    i {
+      @apply text-[#FF0000] text-[1.55rem];
+    }
+  }
+
+  &-title {
+    @apply font-secondary font-light text-[2.8rem] leading-[2.04rem] text-center text-black mt-[2.44rem];
+  }
+}
+
+.contactForm {
+  @apply mt-[4rem] z-30 flex flex-col gap-[3.17rem] w-full px-[1.5rem];
+
+  @screen laptop {
   }
 
   &Cont {
@@ -35,10 +58,15 @@
   }
 
   &-input {
+    label {
+      @apply font-primary font-light text-[1.3rem] leading-[1.3rem];
+      color: rgba(0, 0, 0, 0.5);
+    }
+
     &-input {
-      @apply h-[4.8rem] px-[1.4rem] rounded-[0.5rem] bg-white w-full font-primary font-normal text-[1.5rem] leading-[2.25rem];
-      border: 0.781px solid #0080cf;
-      color: #0e0e0e;
+      @apply bg-transparent h-[2.44rem] w-full font-primary font-light text-[2rem] leading-[2rem] mt-[1rem];
+      color: rgba(0, 0, 0, 0.5);
+      border-bottom: 0.51px solid rgba(0, 0, 0, 0.5);
 
       @screen laptop {
         height: calc(4.8rem * var(--scale));
@@ -47,8 +75,6 @@
         font-size: calc(1.8rem * var(--scale));
         line-height: calc(2.85rem * var(--scale));
         border: 1px solid #0080cf;
-        border: none;
-        border-bottom: 2px solid #ccc;
       }
     }
 

@@ -31,13 +31,13 @@ export const Layout: FC<PropsWithChildren> = ({ children }: any) => {
 
   return (
     <div className={`${roboto.variable} ${rubik.variable} ${poppins.variable}`}>
-      {/* <CustomHead /> */}
       <ObserverTop />
-      <Header />
       <ContactForm
         form={multilanguage.contact_form}
         title={multilanguage.contact_form.title}
       />
+      <Header />
+
       {children}
       <Footer />
     </div>
