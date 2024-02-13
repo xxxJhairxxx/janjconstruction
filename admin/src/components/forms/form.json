@@ -1,18 +1,39 @@
 {
   "collectionName": "components_forms_forms",
   "info": {
-    "displayName": "form"
+    "displayName": "form",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "inputs": {
-      "displayName": "input",
-      "type": "component",
-      "repeatable": true,
-      "component": "forms.input"
-    },
     "messages": {
       "type": "json"
+    },
+    "name": {
+      "displayName": "name",
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.name"
+    },
+    "email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.name"
+    },
+    "phone": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.name"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.name"
+    },
+    "message": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.name"
     }
   }
 }

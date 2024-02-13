@@ -63,6 +63,7 @@ const initialState: ControllerState = {
       lbl_send: '',
       lbl_see_more: '',
     },
+    lbl_error_recaptcha: '',
   },
 }
 

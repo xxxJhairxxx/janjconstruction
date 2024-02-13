@@ -43,10 +43,15 @@ export interface FormsForm extends Schema.Component {
   collectionName: 'components_forms_forms';
   info: {
     displayName: 'form';
+    description: '';
   };
   attributes: {
-    inputs: Attribute.Component<'forms.input', true>;
     messages: Attribute.JSON;
+    name: Attribute.Component<'forms.name'>;
+    email: Attribute.Component<'forms.name'>;
+    phone: Attribute.Component<'forms.name'>;
+    services: Attribute.Component<'forms.name'>;
+    message: Attribute.Component<'forms.name'>;
   };
 }
 
@@ -68,6 +73,18 @@ export interface FormsMessages extends Schema.Component {
     displayName: 'messages';
   };
   attributes: {};
+}
+
+export interface FormsName extends Schema.Component {
+  collectionName: 'components_forms_names';
+  info: {
+    displayName: 'name';
+    description: '';
+  };
+  attributes: {
+    name: Attribute.String;
+    label: Attribute.String;
+  };
 }
 
 export interface GalleryGalleryWork extends Schema.Component {
@@ -193,6 +210,7 @@ declare module '@strapi/types' {
       'forms.form': FormsForm;
       'forms.input': FormsInput;
       'forms.messages': FormsMessages;
+      'forms.name': FormsName;
       'gallery.gallery-work': GalleryGalleryWork;
       'home-sections.home-company': HomeSectionsHomeCompany;
       'home-sections.home-middle': HomeSectionsHomeMiddle;
