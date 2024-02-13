@@ -14,7 +14,7 @@ interface AboutProps {
 
 const About = ({ about }: AboutProps) => {
   return (
-    <div className='about'>
+    <div className='about main-page'>
       <div className='about-banner'>
         <figure className='about-banner-img'>
           <Image

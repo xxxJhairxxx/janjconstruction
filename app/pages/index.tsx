@@ -15,9 +15,9 @@ interface HomeProps {
   home: HomeData
 }
 
-const Index = ({ home}: HomeProps) => {
+const Index = ({ home }: HomeProps) => {
   return (
-    <main>
+    <main className='main-page'>
       <HomeBanner
         title={home.home_banner.title}
         subtitle={home.home_banner.subtitle}

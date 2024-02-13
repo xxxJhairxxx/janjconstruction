@@ -5,6 +5,7 @@ import Head from 'next/head'
 import { AppProps } from 'next/app'
 import { ControllerState, GeneralsProvider } from '@context/generals.context'
 import { NavbarProvider } from '@context/navbar.context'
+import { Favicon } from '@globals/Favicon'
 
 interface CustomPageProps {
   generals: ControllerState
@@ -17,8 +18,8 @@ export default function App({
   return (
     <>
       <Head>
-        <title>J&C Construccion</title>
-        {/* <Favicon /> */}
+        <title>JAJ Construction</title>
+        <Favicon />
       </Head>
 
       <GeneralsProvider generals={pageProps.generals}>

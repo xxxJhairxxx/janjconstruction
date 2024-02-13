@@ -145,6 +145,7 @@ export default function ContactForm({ title, form }: ContactFormProps) {
 
   console.log(dataForm)
   console.log(serviceSelected)
+
   return (
     <div className={`contact ${showContact ? 'show' : ''}`}>
       <button className='contact-close' onClick={handleClose}>
