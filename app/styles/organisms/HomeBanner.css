@@ -32,13 +32,13 @@
         text-shadow: #000 -3px 1px 5px;
       }
       span:nth-child(1) {
-        @apply italic block text-[1.7rem];
+        @apply italic block text-[1.5rem];
       }
       span:nth-child(2) {
-        @apply text-primary font-[600] text-[4.6rem];
+        @apply text-primary font-[600] text-[4.3rem];
       }
       span:nth-child(3) {
-        @apply text-[2.65rem] font-[500];
+        @apply text-[2.4rem] font-[500];
       }
 
       @screen tablet {

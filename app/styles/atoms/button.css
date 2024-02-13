@@ -1,7 +1,7 @@
 /** @format */
 
 .button-link {
-	@apply text-white  text-[1.65rem] border-[0.2rem] transition-colors  border-white bg-transparent px-[3.7rem] font-semibold py-[0.9rem] rounded-[5rem];
+	@apply text-white  text-[1.4rem] border-[0.2rem] transition-colors  border-white bg-transparent px-[3.7rem] font-semibold py-[0.9rem] rounded-[5rem];
 	transition-duration: 0.5s;
 
 	@screen tablet {
