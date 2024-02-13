@@ -10,6 +10,7 @@ export interface MultilanguageData {
   lbl_service: string
   menu: Menu[]
   labels_buttons: LabelsButtons
+  lbl_error_recaptcha: string
 }
 
 export interface Menu {

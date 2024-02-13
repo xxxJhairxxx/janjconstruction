@@ -857,6 +857,7 @@ export interface ApiContactContact extends Schema.SingleType {
     singularName: 'contact';
     pluralName: 'contacts';
     displayName: 'Contact';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -966,6 +967,7 @@ export interface ApiMultilanguageMultilanguage extends Schema.SingleType {
     menu: Attribute.Component<'menus.menu', true>;
     labels_buttons: Attribute.Component<'label-buttons.labels-button'>;
     lbl_service: Attribute.String;
+    lbl_error_recaptcha: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

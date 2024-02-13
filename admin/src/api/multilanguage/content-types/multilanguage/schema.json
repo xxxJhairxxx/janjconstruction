@@ -26,6 +26,9 @@
     },
     "lbl_service": {
       "type": "string"
+    },
+    "lbl_error_recaptcha": {
+      "type": "string"
     }
   }
 }

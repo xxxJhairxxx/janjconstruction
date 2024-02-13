@@ -1,8 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { FC, useEffect, useRef } from 'react'
+import { FC } from 'react'
 import { useNavbarContext } from '@/context/navbar.context'
-import { goToSection } from '@/lib/utils'
 import { Logo } from '../atoms/Logo'
 import { useGenerals } from '@context/generals.context'
 
@@ -16,6 +15,10 @@ export const Navbar: FC<NavbarProps> = ({ isMenuOpen, closeMenu }) => {
   const { asPath } = useRouter()
   const { isTopZero } = useNavbarContext()
 
+  const half = 4
+  const menuPartOne = [...multilanguage.menu].slice(0, half)
+  const menuPartTwo = [...multilanguage.menu].slice(half)
+
   return (
     <nav
       className={`Navbar ${isMenuOpen ? 'isActive' : ''} ${
@@ -25,7 +28,7 @@ export const Navbar: FC<NavbarProps> = ({ isMenuOpen, closeMenu }) => {
       <Logo className='Navbar-logo' type={2} />
       <div className='Navbar-ctn'>
         <ul className='Navbar-ul'>
-          {multilanguage.menu.map(({ id, label, url }) => (
+          {menuPartOne.map(({ id, label, url }) => (
             <Link
               key={id}
               href={url}
@@ -36,6 +39,18 @@ export const Navbar: FC<NavbarProps> = ({ isMenuOpen, closeMenu }) => {
                 {label}
               </li>
             </Link>
+          ))}
+
+          {menuPartTwo.map(({ id, label, url }) => (
+            <li
+              key={id}
+              onClick={() => alert('contact')}
+              className='Navbar-ul-link'
+            >
+              <span className={`Navbar-ul-li ${url === asPath && 'isActive'}`}>
+                {label}
+              </span>
+            </li>
           ))}
         </ul>
       </div>
