@@ -818,39 +818,6 @@ export interface ApiAboutAbout extends Schema.SingleType {
   };
 }
 
-export interface ApiConstructionConstruction extends Schema.SingleType {
-  collectionName: 'constructions';
-  info: {
-    singularName: 'construction';
-    pluralName: 'constructions';
-    displayName: 'Construction';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    subtitle: Attribute.String;
-    title: Attribute.String;
-    text: Attribute.Text;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::construction.construction',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::construction.construction',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiGeneralGeneral extends Schema.SingleType {
   collectionName: 'generals';
   info: {
@@ -955,7 +922,7 @@ export interface ApiMultilanguageMultilanguage extends Schema.SingleType {
   };
 }
 
-export interface ApiProjectProject extends Schema.CollectionType {
+export interface ApiProjectProject extends Schema.SingleType {
   collectionName: 'projects';
   info: {
     singularName: 'project';
@@ -968,6 +935,7 @@ export interface ApiProjectProject extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     subtitle: Attribute.String;
+    text: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -979,6 +947,38 @@ export interface ApiProjectProject extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::project.project',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiProjectItemProjectItem extends Schema.CollectionType {
+  collectionName: 'project_items';
+  info: {
+    singularName: 'project-item';
+    pluralName: 'project-items';
+    displayName: 'Project-items';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    place: Attribute.String;
+    images: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::project-item.project-item',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::project-item.project-item',
       'oneToOne',
       'admin::user'
     > &
@@ -1069,11 +1069,11 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
-      'api::construction.construction': ApiConstructionConstruction;
       'api::general.general': ApiGeneralGeneral;
       'api::home.home': ApiHomeHome;
       'api::multilanguage.multilanguage': ApiMultilanguageMultilanguage;
       'api::project.project': ApiProjectProject;
+      'api::project-item.project-item': ApiProjectItemProjectItem;
       'api::servi.servi': ApiServiServi;
       'api::service.service': ApiServiceService;
     }

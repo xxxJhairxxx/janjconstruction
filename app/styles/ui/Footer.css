@@ -69,7 +69,7 @@
       @apply bg-red-400 text-[1.6rem] mt-2 mb-6 w-fit rounded-full px-[3rem] py-[1rem] flex items-center justify-center gap-[0.5rem];
 
       @screen laptop {
-        @apply px-0 py-0;
+        @apply p-0 m-0;
         font-size: calc(1.5rem * var(--scale));
         width: calc(5rem * var(--scale));
         height: calc(5rem * var(--scale));
