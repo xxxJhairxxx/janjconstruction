@@ -1,6 +1,5 @@
 /** @format */
 
-import { Contact, ContactData } from '@/interfaces/contact'
 import { Home, HomeData } from '@/interfaces/home'
 import { baseApi } from '@/lib/baseApi'
 import { getGenerals } from '@/lib/getGenerals'
@@ -14,14 +13,11 @@ import { GetStaticProps } from 'next'
 
 interface HomeProps {
   home: HomeData
-  contact: ContactData
 }
 
-const Index = ({ home, contact }: HomeProps) => {
+const Index = ({ home}: HomeProps) => {
   return (
     <main>
-      <ContactForm title={contact.title} form={contact.form} />
-
       <HomeBanner
         title={home.home_banner.title}
         subtitle={home.home_banner.subtitle}
@@ -56,15 +52,13 @@ export default Index
 export const getStaticProps: GetStaticProps = async () => {
   const generals = await getGenerals()
 
-  const [{ data: home }, { data: contact }] = await Promise.all([
+  const [{ data: home }] = await Promise.all([
     baseApi.get<Home>(`/home?locale=en&populate=deep`),
-    baseApi.get<Contact>(`/contact?locale=en&populate=deep`),
   ])
 
   return {
     props: {
       home: home.data,
-      contact: contact.data,
       generals,
     },
     revalidate: 1,
