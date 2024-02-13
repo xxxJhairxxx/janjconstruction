@@ -22,6 +22,7 @@ export const Navbar: FC<NavbarProps> = ({ isMenuOpen, closeMenu }) => {
   const handleClick = () => {
     setShowContact(true)
     closeMenu()
+    document.body.style.overflow = 'hidden'
   }
 
   return (
