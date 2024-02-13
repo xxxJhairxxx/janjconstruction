@@ -1,5 +1,5 @@
 .contact {
-  @apply absolute w-full h-full pt-[2.7rem] px-[1.9rem] flex flex-col items-center;
+  @apply fixed w-full h-full pt-[2.7rem] px-[1.9rem] flex flex-col items-center;
   z-index: 999;
   background-image: url('/img/contact-bg.webp');
   background-size: cover;
@@ -9,6 +9,22 @@
 
   @screen laptop {
     background-image: url('/img/contact-bg-desktop.webp');
+    padding-top: calc(4.5rem * var(--scale));
+    padding-bottom: calc(13.6rem * var(--scale));
+    overflow-y: scroll;
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px; /* Ancho de la barra de desplazamiento */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: black;
+    border-radius: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
   }
 
   &.show {
@@ -16,7 +32,13 @@
   }
 
   &-close {
-    @apply bg-white rounded-full w-[3.85rem] h-[3.85rem] flex items-center justify-center;
+    @apply bg-white rounded-full min-h-[3.85rem] w-[3.85rem] h-[3.85rem] flex items-center justify-center;
+
+    @screen laptop {
+      width: calc(4.9rem * var(--scale));
+      height: calc(4.9rem * var(--scale));
+      min-height: calc(4.9rem * var(--scale));
+    }
 
     i {
       @apply text-[#FF0000] text-[1.55rem];
@@ -24,7 +46,13 @@
   }
 
   &-title {
-    @apply font-secondary font-light text-[2.8rem] leading-[2.04rem] text-center text-black mt-[2.44rem];
+    @apply font-secondary font-light text-[2.8rem] leading-[2.04rem] text-center text-black mt-[2.64rem];
+
+    @screen laptop {
+      font-size: calc(8rem * var(--scale));
+      line-height: calc(8rem * var(--scale));
+      margin-top: calc(9.8rem * var(--scale));
+    }
   }
 }
 
@@ -32,96 +60,110 @@
   @apply mt-[4rem] z-30 flex flex-col gap-[3.17rem] w-full px-[1.5rem];
 
   @screen laptop {
-  }
-
-  &Cont {
-    @screen laptop {
-      padding: unset !important;
-      width: unset !important;
-    }
-  }
-
-  &-container {
-    @apply flex flex-col gap-[2rem];
-    @screen laptop {
-      gap: calc(2rem * var(--scale));
-    }
-  }
-
-  &-grid {
-    @apply grid grid-cols-1 gap-[2rem];
-
-    @screen laptop {
-      @apply grid-cols-2;
-      gap: calc(2rem * var(--scale));
-    }
+    max-width: calc(98.6rem * var(--scale));
+    margin-top: calc(8.7rem * var(--scale));
+    gap: calc(6.1rem * var(--scale));
   }
 
   &-input {
+    @apply relative flex flex-col gap-[1rem];
+
+    @screen laptop {
+      gap: calc(2.67rem * var(--scale));
+    }
+
     label {
-      @apply font-primary font-light text-[1.3rem] leading-[1.3rem];
+      @apply font-primary font-light text-[1.4rem] leading-[1.4rem];
       color: rgba(0, 0, 0, 0.5);
+
+      @screen laptop {
+        font-size: calc(1.7rem * var(--scale));
+        line-height: calc(1.7rem * var(--scale));
+      }
     }
 
     &-input {
-      @apply bg-transparent h-[2.44rem] w-full font-primary font-light text-[2rem] leading-[2rem] mt-[1rem];
-      color: rgba(0, 0, 0, 0.5);
+      @apply bg-transparent h-[2.44rem] w-full font-primary font-light text-[1.5rem] leading-[1.5rem] relative text-black;
       border-bottom: 0.51px solid rgba(0, 0, 0, 0.5);
 
       @screen laptop {
-        height: calc(4.8rem * var(--scale));
-        padding-left: calc(1.6rem * var(--scale));
-        padding-right: calc(1.6rem * var(--scale));
-        font-size: calc(1.8rem * var(--scale));
-        line-height: calc(2.85rem * var(--scale));
-        border: 1px solid #0080cf;
+        height: calc(5.2rem * var(--scale));
+        font-size: calc(4rem * var(--scale));
+        line-height: calc(4rem * var(--scale));
+      }
+
+      &::placeholder {
+        @apply font-light text-[1.7rem] leading-[1.7rem];
+        color: rgba(0, 0, 0, 0.5);
+
+        @screen laptop {
+          font-size: calc(4rem * var(--scale));
+          line-height: calc(4rem * var(--scale));
+        }
+      }
+
+      &.textarea {
+        @apply h-[12.6rem] py-[0.7rem];
+
+        @screen laptop {
+          height: calc(34.7rem * var(--scale));
+        }
       }
     }
 
-    /* .select-service {
-      select {
-        @apply h-[4.8rem] pl-[1.4rem] pr-[4rem] rounded-[0.5rem] bg-white w-full font-primary font-light text-[1.5rem] leading-[2.25rem];
-        border: 0.781px solid #0080cf;
-        appearance: none;
-        color: #606060;
+    select {
+      @apply bg-transparent font-primary font-light text-[1.5rem] leading-[1.5rem] relative text-black;
+      border-bottom: 0.51px solid rgba(0, 0, 0, 0.5);
 
-        @screen laptop {
-          height: calc(4.8rem * var(--scale));
-          padding-left: calc(1.6rem * var(--scale));
-          padding-right: calc(5rem * var(--scale));
-          font-size: calc(1.8rem * var(--scale));
-          line-height: calc(2.85rem * var(--scale));
-          border: 1px solid #0080cf;
+      @screen laptop {
+        font-size: calc(4rem * var(--scale));
+        line-height: calc(4rem * var(--scale));
+      }
+
+      option {
+        background-color: transparent;
+
+        &:first-child {
         }
       }
-    } */
+    }
   }
 
   .textA {
     textarea {
-      @apply h-[15.1rem] px-[1.4rem] pt-[1rem] rounded-[0.5rem] bg-white w-full font-primary font-normal text-[1.5rem] leading-[2.25rem];
+      @apply h-[15.1rem] py-[1rem] rounded-[0.5rem] bg-white w-full font-primary font-normal text-[1.5rem] leading-[2.25rem];
       border: 0.781px solid #0080cf;
       color: #0e0e0e;
 
       @screen laptop {
         height: calc(15.1rem * var(--scale));
-        padding-left: calc(1.6rem * var(--scale));
-        padding-right: calc(1.6rem * var(--scale));
         font-size: calc(1.8rem * var(--scale));
         line-height: calc(2.85rem * var(--scale));
         border: 1px solid #0080cf;
       }
 
       &::placeholder {
-        @apply font-light;
-        color: #606060;
+        @apply font-light text-[1.7rem];
+        color: rgba(0, 0, 0, 0.5);
       }
     }
   }
 
   .form-button {
-    /* @apply w-full px-0 flex items-center justify-start; */
-    @apply flex items-center justify-start;
+    @apply flex items-center justify-center;
+
+    button {
+      @apply rounded-full h-[3.65rem] px-[3.5rem] flex items-center justify-center uppercase font-primary font-medium text-[1.34rem] leading-[1.34rem] text-white;
+      background: linear-gradient(#ff1400, #be0f00);
+
+      @screen laptop {
+        height: calc(5.8rem * var(--scale));
+        font-size: calc(2.1rem * var(--scale));
+        line-height: calc(2.1rem * var(--scale));
+        padding-left: calc(9rem * var(--scale));
+        padding-right: calc(9rem * var(--scale));
+      }
+    }
   }
 
   .Form-error {

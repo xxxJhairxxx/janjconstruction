@@ -7,7 +7,6 @@
 @import './ui';
 @import './pages';
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,7 +22,7 @@ html {
 
 body {
   p {
-    @apply font-primary font-[300] text-justify leading-[1.5] ;
+    @apply font-primary font-[300] text-justify leading-[1.5];
     font-size: 1.63rem;
     @screen laptop {
       @apply leading-[1.7];
@@ -58,7 +57,6 @@ input {
   background-image: var(--bg-img);
 }
 
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -68,7 +66,7 @@ input {
   }
 }
 
-/* .error-group {
+.error-group {
   @apply text-red-500 absolute top-[50%] right-[1rem] opacity-0 leading-[1] text-[1.5rem];
   transform: translateY(-50%);
   transition: opacity 350ms ease-in-out;
@@ -76,11 +74,11 @@ input {
 
   i {
     @apply text-red-500;
-  } */
+  }
 
-/* span {
-    @apply absolute font-primary w-max right-[-0.7rem] top-[-4rem] bg-white px-[.8rem] py-[.8rem] text-[1.3rem];
-    @apply rounded-[.5rem];
+  span {
+    @apply absolute font-primary w-max right-[-0.7rem] top-[-4rem]  px-[.8rem] py-[.8rem] text-[1.3rem] rounded-[.5rem];
+    background-color: rgba(255, 255, 255, 0.3);
 
     @screen laptop {
       font-size: calc(1.3rem * var(--scale));
@@ -91,25 +89,26 @@ input {
       @apply absolute top-[100%] right-[1rem] ml-[-5px];
       border-width: 5px;
       border-style: solid;
-      border-color: #fff transparent transparent transparent;
+      border-color: rgba(255, 255, 255, 0.3) transparent transparent transparent;
     }
   }
   &.error {
     @apply opacity-100;
   }
-} */
+}
 
-/* .error-captcha {
-  @apply absolute top-[-2rem] left-[1.2rem] !text-red-500 leading-[1] text-[1.5rem] bg-white p-[.8rem];
+.error-captcha {
+  @apply absolute top-[-2rem] left-[1.2rem] !text-red-500 leading-[1] text-[1.5rem] p-[.8rem];
   @apply rounded-[0.5rem];
   filter: drop-shadow(0px 5px 20px rgba(0, 0, 0, 0.15));
+  background-color: rgba(255, 255, 255, 0.3);
 
   &::after {
     content: '';
     @apply absolute top-[100%] left-[1.5rem] ml-[-5px];
     border-width: 5px;
     border-style: solid;
-    border-color: #fff transparent transparent transparent;
+    border-color: rgba(255, 255, 255, 0.3) transparent transparent transparent;
   }
   span {
     @apply flex font-primary items-center gap-[.5rem] text-[1.3rem];
@@ -119,4 +118,4 @@ input {
       font-size: calc(1.2rem * var(--scale));
     }
   }
-} */
+}

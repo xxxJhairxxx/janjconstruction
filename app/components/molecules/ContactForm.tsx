@@ -11,6 +11,7 @@ import {
 } from '@/lib/formUtils'
 import { baseApi } from '@/lib/baseApi'
 import { useNavbarContext } from '@context/navbar.context'
+import axios from 'axios'
 
 interface ContactFormProps {
   title: string
@@ -18,7 +19,7 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ title, form }: ContactFormProps) {
-  const { name, phone, email, message } = form
+  const { name, phone, email, services, message } = form
   const messages = form.messages
 
   const [captchaResponse, setCaptchaResponse] = useState('')
@@ -30,13 +31,15 @@ export default function ContactForm({ title, form }: ContactFormProps) {
   const [sending, setSending] = useState(false)
   const [dataForm, setDataForm] = useState({
     name: '',
-    phone: '',
     email: '',
+    phone: '',
+    services: '',
     message: '',
   })
+  const [servicesForm, setServicesForm] = useState([])
 
   const { multilanguage } = useGenerals()
-  const { showContact, setShowContact } = useNavbarContext()
+  const { showContact, setShowContact, serviceSelected } = useNavbarContext()
 
   const onChangeRecaptcha = (response: any) => {
     setCaptchaResponse(response)
@@ -53,8 +56,9 @@ export default function ContactForm({ title, form }: ContactFormProps) {
   } = useForm({ mode: 'onChange', shouldUnregister: false })
 
   const nameValue = watch('name')
-  const phoneValue = watch('phone')
   const emailValue = watch('email')
+  const phoneValue = watch('phone')
+  const servicesValue = watch('services')
   const messageValue = watch('message')
 
   const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -84,24 +88,24 @@ export default function ContactForm({ title, form }: ContactFormProps) {
 
   const onSubmit = async (data: any) => {
     try {
-      if (!captchaResponse) {
-        setShowCaptchaError(true)
+      // if (!captchaResponse) {
+      //   setShowCaptchaError(true)
 
-        return
-      }
+      //   return
+      // }
 
       setSending(true)
 
       setDataForm((prevDataForm: any) => ({
         ...prevDataForm,
         name: data.name,
-        last_name: data.last_name,
-        phone: data.phone,
         email: data.email,
+        phone: data.phone,
+        services: data.services,
         message: data.message,
       }))
     } catch (error) {
-      setCaptchaResponse('')
+      // setCaptchaResponse('')
     }
   }
 
@@ -114,13 +118,33 @@ export default function ContactForm({ title, form }: ContactFormProps) {
     if (
       dataForm.name !== '' &&
       dataForm.phone !== '' &&
-      dataForm.email !== ''
+      dataForm.email !== '' &&
+      dataForm.services !== ''
     ) {
       sendForm()
     } else {
     }
   }, [dataForm])
 
+  useEffect(() => {
+    axios
+      .get(`${process.env.NEXT_PUBLIC_STRAPI_URL}/services?populate=deep`)
+      .then((response) => setServicesForm(response.data.data))
+      .catch((error) => console.log(error))
+  }, [])
+
+  useEffect(() => {
+    setDataForm((prevState) => {
+      return { ...prevState, services: serviceSelected }
+    })
+  }, [setDataForm, serviceSelected])
+
+  const arrays = servicesForm.map((services: any) => services.title)
+
+  const servicesList = [].concat(...(arrays as any))
+
+  console.log(dataForm)
+  console.log(serviceSelected)
   return (
     <div className={`contact ${showContact ? 'show' : ''}`}>
       <button className='contact-close' onClick={handleClose}>
@@ -140,6 +164,7 @@ export default function ContactForm({ title, form }: ContactFormProps) {
                 message: messages.invalid_name,
               },
             })}
+            placeholder={name.placeholder}
             className={`contactForm-input-input ${errors.name ? 'error' : ''}`}
           />
 
@@ -160,6 +185,7 @@ export default function ContactForm({ title, form }: ContactFormProps) {
                 message: messages.invalid_email,
               },
             })}
+            placeholder={email.placeholder}
             className={`contactForm-input-input ${errors.email ? 'error' : ''}`}
           />
           <div className={`error-group ${errors.email && 'error'} `}>
@@ -180,6 +206,7 @@ export default function ContactForm({ title, form }: ContactFormProps) {
               },
             })}
             onChange={handlePhoneChange}
+            placeholder={phone.placeholder}
             className={`contactForm-input-input ${errors.phone ? 'error' : ''}`}
           />
           <div className={`error-group ${errors.phone && 'error'} `}>
@@ -190,11 +217,35 @@ export default function ContactForm({ title, form }: ContactFormProps) {
         </div>
 
         <div className='contactForm-input'>
+          <label htmlFor={services.name}>{services.label}</label>
+
+          <select
+            {...register('services', {
+              required: true,
+            })}
+          >
+            <option value='' disabled>
+              Services
+            </option>
+            {servicesList.map((service: any) => (
+              <option key={service.id}>{service}</option>
+            ))}
+          </select>
+
+          <div className={`error-group ${errors.services && 'error'} `}>
+            {errors.services && servicesValue?.length > 0 && (
+              <span>{String(errors.services.message)}</span>
+            )}
+          </div>
+        </div>
+
+        <div className='contactForm-input'>
           <label htmlFor={message.name}>{message.label}</label>
           <textarea
             {...register('message', {
               required: false,
             })}
+            placeholder={message.placeholder}
             className={`contactForm-input-input textarea ${
               errors.message ? 'error' : ''
             }`}
@@ -216,13 +267,13 @@ export default function ContactForm({ title, form }: ContactFormProps) {
             <div className={`error-captcha`}>
               <span className='text-red-500'>
                 <i className='icon-warning'></i>
-                {multilanguage.lbl_error_recaptcha}
+                {multilanguage.labels.lbl_error_recaptcha}
               </span>
             </div>
           )}
         </div> */}
 
-        <div className='form-buttom'>
+        <div className='form-button'>
           <button type='submit'>
             {sending ? <Loader /> : multilanguage.labels_buttons.lbl_send}
           </button>

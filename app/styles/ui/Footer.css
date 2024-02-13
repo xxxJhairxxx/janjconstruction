@@ -1,60 +1,58 @@
 /** @format */
 
 .Footer {
-	@apply bg-[#231F20] text-white px-[3rem] py-[5rem];
-    background-image: url("./img/footer-decore.png");
-	&__title {
-		@apply text-center;
+  @apply bg-[#231F20] text-white px-[3rem] py-[5rem];
+  background-image: url('/img/footer-decore.webp');
+  &__title {
+    @apply text-center;
 
-		h2 {
-			@apply font-secondary text-[2.2rem]  font-[500];
-			@screen laptop {
-				font-size: calc(4rem * var(--scale));
-			}
-		}
-		p {
-			@apply text-center max-w-[45rem] mx-auto;
-			@screen tablet {
-				@apply pb-3 pt-1;
-			}
-			@screen laptop {
-				max-width: calc(100rem * var(--scale));
-			}
-		}
-	}
+    h2 {
+      @apply font-secondary text-[2.2rem]  font-[500];
+      @screen laptop {
+        font-size: calc(4rem * var(--scale));
+      }
+    }
+    p {
+      @apply text-center max-w-[45rem] mx-auto;
+      @screen tablet {
+        @apply pb-3 pt-1;
+      }
+      @screen laptop {
+        max-width: calc(100rem * var(--scale));
+      }
+    }
+  }
 
-	&__form {
-		@apply flex flex-col items-center gap-5 py-5 mx-auto max-w-[50rem];
+  &__form {
+    @apply flex flex-col items-center gap-5 py-5 mx-auto max-w-[50rem];
 
-		input {
-			@apply py-4 px-10 rounded-full w-full text-[1.7rem];
-		}
+    input {
+      @apply py-4 px-10 rounded-full w-full text-[1.7rem];
+    }
 
-		button {
-			@apply bg-red-400 text-[1.6rem] w-fit rounded-full px-[3rem] py-[1rem];
-		}
-	}
+    button {
+      @apply bg-red-400 text-[1.6rem] w-fit rounded-full px-[3rem] py-[1rem];
+    }
+  }
 
-	&__info {
-		@apply flex flex-wrap gap-y-1 gap-x-6 justify-center;
-		a,
-		address {
-			@apply text-[1.3rem] not-italic font-[200];
-            
-            @screen laptop{
-                font-size: calc(1.8rem * var(--scale));
-            }
-		}
+  &__info {
+    @apply flex flex-wrap gap-y-1 gap-x-6 justify-center;
+    a,
+    address {
+      @apply text-[1.3rem] not-italic font-[200];
 
-		&-email:before {
-			@apply mr-3 text-[1.2rem] font-['icomoon'];
-			content: '\e901';
-            
-		}
-		&-phone:before {
-			@apply mr-3 text-[1.3rem] font-['icomoon'];
-			content: '\e900';
-		}
-        
-	}
+      @screen laptop {
+        font-size: calc(1.8rem * var(--scale));
+      }
+    }
+
+    &-email:before {
+      @apply mr-3 text-[1.2rem] font-['icomoon'];
+      content: '\e901';
+    }
+    &-phone:before {
+      @apply mr-3 text-[1.3rem] font-['icomoon'];
+      content: '\e900';
+    }
+  }
 }
