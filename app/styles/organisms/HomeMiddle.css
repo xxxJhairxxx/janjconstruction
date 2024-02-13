@@ -1,11 +1,21 @@
-.HomeMiddle{
-    @apply h-[24rem] px-2 my-[4.5rem] relative flex justify-center items-center text-center ;
-    &__image{
-        @apply absolute left-0 top-0 z-[-1] h-full w-full;
-    }
+/** @format */
 
-    h2{
-        @apply text-[2.8rem] text-white font-bold;
-        text-shadow: rgba(0, 0, 0, 0.422) -3px 1px 10px;
-    }
+.HomeMiddle {
+	@apply h-[24rem] px-2 my-[4.5rem] relative flex justify-center items-center text-center;
+	&__image {
+		@apply absolute left-0 top-0 z-[-1] h-full w-full;
+	}
+
+	h2 {
+		@apply text-[2.8rem] text-white font-bold;
+		text-shadow: rgba(0, 0, 0, 0.422) -3px 1px 10px;
+	}
+
+	@screen laptop {
+		height: calc(40rem * var(--scale));
+		h2 {
+			font-size: calc(5.5rem * var(--scale));
+            width: calc(100rem * var(--scale));
+		}
+	}
 }

@@ -2,13 +2,24 @@
 
 .HomeWeWord {
 	&__info {
-        @apply w-[34rem] mx-auto;
+		@apply w-[34rem] mx-auto;
 		p {
 			@apply text-center;
 		}
 
-        @screen tablet {
-            @apply w-[40rem];
+		@screen tablet {
+			@apply w-[40rem];
+		}
+	}
+
+	@screen laptop{
+		margin-block: calc(8rem * var(--scale));
+        &__info{
+            width: calc(60rem * var(--scale));
+             
+            p {
+                padding-block: calc(1rem * var(--scale));
+            }
         }
 	}
 }

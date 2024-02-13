@@ -6,8 +6,6 @@ import Thumb from '@atoms/Thumb';
 import { Title } from '@atoms/Title';
 import { useGenerals } from '@context/generals.context';
 import { Container } from '@globals/Container';
-import { subtle } from 'crypto';
-import { subscribe } from 'diagnostics_channel';
 import React from 'react';
 
 interface Props {

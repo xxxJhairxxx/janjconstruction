@@ -4,6 +4,7 @@
 	@apply my-10;
 	&__container {
 		@apply bg-primary px-[3rem] py-[2rem] rounded-2xl;
+		background-image: url("/img/about-bg-desktop.webp");
 
 		&__info {
 			p {
