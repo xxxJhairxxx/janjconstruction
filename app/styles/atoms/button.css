@@ -50,7 +50,7 @@
 	}
 
 	@screen laptop {
-		@apply font-[400];
+		@apply font-[500];
 		font-size: calc(2rem * var(--scale));
 		margin-block: calc(2rem * var(--scale));
 	}

@@ -3,26 +3,27 @@
 import { useGenerals } from '@context/generals.context';
 import React from 'react';
 
-
 const Footer = () => {
-    const {general,multilanguage:{labels_buttons}}= useGenerals();
+	const {
+		general,
+		multilanguage: { labels_buttons, footer_form },
+	} = useGenerals();
 	return (
 		<footer className={'Footer'}>
-			<div>
-				{/* <h2>{title}</h2>
-				<p>{text}</p> */}
+			<div className='Footer__title'>
+				<h2>{footer_form.title}</h2>
+				<p>{footer_form.text}</p>
 			</div>
-			<form action=''>
-				<input type='text' />
-				<input type='text' />
+			<form className='Footer__form'>
+				<input type='text' placeholder={footer_form.email.placeholder} />
+				<input type='text' placeholder={footer_form.message.placeholder} />
 				<button>{labels_buttons.lbl_send}</button>
 			</form>
-            <div className=''>
-                <a href=""><address>{general.address}</address></a>
-                <a href={`emailto:${general.email}`}>{general.email}</a>
-                <a href={`tel:+${general.phone}`}>{general.phone}</a>
-                
-            </div>
+			<div className='Footer__info'>
+				<a href={general.address_url}><address>{general.address}</address></a>
+				<a className='Footer__info-email'  href={`emailto:${general.email}`}>{general.email}</a>
+				<a className='Footer__info-phone' href={`tel:+${general.phone}`}>{general.phone}</a>
+			</div>
 		</footer>
 	);
 };

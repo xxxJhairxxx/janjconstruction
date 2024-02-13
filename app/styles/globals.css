@@ -23,11 +23,11 @@ html {
 
 body {
   p {
-    @apply font-primary text-justify text-black leading-[1.5];
+    @apply font-primary font-[300] text-justify leading-[1.5] ;
     font-size: 1.63rem;
     @screen laptop {
       @apply leading-[1.7];
-      font-size: max(1.3rem, calc(2rem * var(--scale)));
+      font-size: max(1.3rem, calc(1.9rem * var(--scale)));
     }
   }
 
