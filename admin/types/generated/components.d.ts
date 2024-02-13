@@ -10,6 +10,35 @@ export interface CardsServicesCards extends Schema.Component {
   };
 }
 
+export interface FooterContactFooter extends Schema.Component {
+  collectionName: 'components_footer_contact_footers';
+  info: {
+    displayName: 'ContactFooter';
+  };
+  attributes: {
+    title: Attribute.String;
+    text: Attribute.Text;
+    email: Attribute.Component<'forms.input'>;
+    message: Attribute.Component<'forms.input'>;
+  };
+}
+
+export interface FormsContactForm extends Schema.Component {
+  collectionName: 'components_forms_contact_forms';
+  info: {
+    displayName: 'ContactForm';
+  };
+  attributes: {
+    title: Attribute.String;
+    name: Attribute.Component<'forms.input'>;
+    email: Attribute.Component<'forms.input'>;
+    phone: Attribute.Component<'forms.input'>;
+    services: Attribute.Component<'forms.input'>;
+    message: Attribute.Component<'forms.input'>;
+    messages: Attribute.JSON;
+  };
+}
+
 export interface FormsForm extends Schema.Component {
   collectionName: 'components_forms_forms';
   info: {
@@ -159,6 +188,8 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'cards.services-cards': CardsServicesCards;
+      'footer.contact-footer': FooterContactFooter;
+      'forms.contact-form': FormsContactForm;
       'forms.form': FormsForm;
       'forms.input': FormsInput;
       'forms.messages': FormsMessages;

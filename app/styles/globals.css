@@ -27,14 +27,13 @@ body {
     font-size: 1.63rem;
     @screen laptop {
       @apply leading-[1.7];
-      font-size: max(1.\3rem, calc(2rem * var(--scale)));
+      font-size: max(1.3rem, calc(2rem * var(--scale)));
     }
   }
 
   h1,
   h2 {
     @apply font-secondary;
-
     font-size: max(1.4rem, calc(2rem * var(--scale)));
   }
 }
@@ -59,14 +58,6 @@ input {
   background-image: var(--bg-img);
 }
 
-p,
-li {
-  @apply leading-[1.5] text-[1.4rem] font-[300] text-[#606060];
-
-  @screen laptop {
-    font-size: calc(1.6rem * var(--scale));
-  }
-}
 
 @keyframes fadeIn {
   0% {

@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_footer_contact_footers",
+  "info": {
+    "displayName": "ContactFooter"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.input"
+    },
+    "message": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.input"
+    }
+  }
+}

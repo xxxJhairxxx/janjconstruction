@@ -26,6 +26,18 @@
     },
     "lbl_service": {
       "type": "string"
+    },
+    "contact_form": {
+      "displayName": "ContactForm",
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.contact-form"
+    },
+    "footer_form": {
+      "displayName": "ContactFooter",
+      "type": "component",
+      "repeatable": false,
+      "component": "footer.contact-footer"
     }
   }
 }

@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_forms_contact_forms",
+  "info": {
+    "displayName": "ContactForm"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "name": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.input"
+    },
+    "email": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.input"
+    },
+    "phone": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.input"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.input"
+    },
+    "message": {
+      "type": "component",
+      "repeatable": false,
+      "component": "forms.input"
+    },
+    "messages": {
+      "type": "json"
+    }
+  }
+}

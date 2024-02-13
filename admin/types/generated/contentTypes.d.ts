@@ -851,37 +851,6 @@ export interface ApiConstructionConstruction extends Schema.SingleType {
   };
 }
 
-export interface ApiContactContact extends Schema.SingleType {
-  collectionName: 'contacts';
-  info: {
-    singularName: 'contact';
-    pluralName: 'contacts';
-    displayName: 'Contact';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    form: Attribute.Component<'forms.form'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::contact.contact',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::contact.contact',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiGeneralGeneral extends Schema.SingleType {
   collectionName: 'generals';
   info: {
@@ -966,6 +935,8 @@ export interface ApiMultilanguageMultilanguage extends Schema.SingleType {
     menu: Attribute.Component<'menus.menu', true>;
     labels_buttons: Attribute.Component<'label-buttons.labels-button'>;
     lbl_service: Attribute.String;
+    contact_form: Attribute.Component<'forms.contact-form'>;
+    footer_form: Attribute.Component<'footer.contact-footer'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1067,7 +1038,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::about.about': ApiAboutAbout;
       'api::construction.construction': ApiConstructionConstruction;
-      'api::contact.contact': ApiContactContact;
       'api::general.general': ApiGeneralGeneral;
       'api::home.home': ApiHomeHome;
       'api::multilanguage.multilanguage': ApiMultilanguageMultilanguage;
