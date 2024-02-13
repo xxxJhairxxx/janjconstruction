@@ -1,5 +1,5 @@
 .contactForm {
-  @apply bg-white mt-[2.8rem] pt-[3.4rem] pb-[3.9rem] relative z-30 rounded-[1rem];
+  @apply bg-white mt-[2.8rem] pt-[3.4rem] pb-[3.9rem]  z-30 rounded-[1rem] absolute;
 
   @screen laptop {
     @apply mt-0 rounded-[2rem];

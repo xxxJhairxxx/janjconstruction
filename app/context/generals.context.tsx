@@ -54,7 +54,6 @@ const initialState: ControllerState = {
     createdAt: '',
     updatedAt: '',
     publishedAt: '',
-    lbl_service: '',
     menu: [],
     labels_buttons: {
       id: 0,
@@ -63,7 +62,71 @@ const initialState: ControllerState = {
       lbl_send: '',
       lbl_see_more: '',
     },
-    lbl_error_recaptcha: '',
+    contact_form: {
+      id: 1,
+      title: '',
+      messages: {
+        invalid_tel: '',
+        invalid_name: '',
+        mail_sent_ok: '',
+        invalid_email: '',
+        invalid_number: '',
+        invalid_required: '',
+        validation_error: '',
+        invalid_recaptcha: '',
+      },
+      name: {
+        id: 1,
+        name: '',
+        label: '',
+        placeholder: '',
+      },
+      email: {
+        id: 1,
+        name: '',
+        label: '',
+        placeholder: '',
+      },
+      phone: {
+        id: 1,
+        name: '',
+        label: '',
+        placeholder: '',
+      },
+      services: {
+        id: 1,
+        name: '',
+        label: '',
+        placeholder: '',
+      },
+      message: {
+        id: 1,
+        name: '',
+        label: '',
+        placeholder: '',
+      },
+    },
+    footer_form: {
+      id: 1,
+      title: '',
+      text: '',
+      email: {
+        id: 1,
+        name: '',
+        label: '',
+        placeholder: '',
+      },
+      message: {
+        id: 1,
+        name: '',
+        label: '',
+        placeholder: '',
+      },
+    },
+    labels: {
+      lbl_error_recaptcha: '',
+      lbl_service: '',
+    },
   },
 }
 
