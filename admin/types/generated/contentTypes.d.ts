@@ -986,6 +986,38 @@ export interface ApiProjectProject extends Schema.CollectionType {
   };
 }
 
+export interface ApiServiServi extends Schema.SingleType {
+  collectionName: 'servis';
+  info: {
+    singularName: 'servi';
+    pluralName: 'servis';
+    displayName: 'Services';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    subtitle: Attribute.String;
+    text: Attribute.Text;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::servi.servi',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::servi.servi',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiServiceService extends Schema.CollectionType {
   collectionName: 'services';
   info: {
@@ -1042,6 +1074,7 @@ declare module '@strapi/types' {
       'api::home.home': ApiHomeHome;
       'api::multilanguage.multilanguage': ApiMultilanguageMultilanguage;
       'api::project.project': ApiProjectProject;
+      'api::servi.servi': ApiServiServi;
       'api::service.service': ApiServiceService;
     }
   }

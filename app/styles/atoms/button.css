@@ -57,5 +57,5 @@
 }
 
 .button {
-	@apply text-secondary font-semibold underline underline-offset-4;
+	@apply text-secondary font-extrabold underline underline-offset-4;
 }

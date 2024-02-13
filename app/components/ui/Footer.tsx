@@ -15,14 +15,23 @@ const Footer = () => {
 				<p>{footer_form.text}</p>
 			</div>
 			<form className='Footer__form'>
-				<input type='text' placeholder={footer_form.email.placeholder} />
-				<input type='text' placeholder={footer_form.message.placeholder} />
-				<button>{labels_buttons.lbl_send}</button>
+				<div className='Footer__form__inputs'>
+					<input type='text' placeholder={footer_form.email.placeholder} />
+					<input type='text' placeholder={footer_form.message.placeholder} />
+				</div>
+
+				<button data-title={labels_buttons.lbl_send}  />
 			</form>
 			<div className='Footer__info'>
-				<a href={general.address_url}><address>{general.address}</address></a>
-				<a className='Footer__info-email'  href={`emailto:${general.email}`}>{general.email}</a>
-				<a className='Footer__info-phone' href={`tel:+${general.phone}`}>{general.phone}</a>
+				<a href={general.address_url}>
+					<address>{general.address}</address>
+				</a>
+				<a className='Footer__info-email' href={`emailto:${general.email}`}>
+					{general.email}
+				</a>
+				<a className='Footer__info-phone' href={`tel:+${general.phone}`}>
+					{general.phone}
+				</a>
 			</div>
 		</footer>
 	);

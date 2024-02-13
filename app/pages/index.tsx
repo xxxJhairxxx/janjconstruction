@@ -53,7 +53,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const generals = await getGenerals()
 
   const [{ data: home }] = await Promise.all([
-    baseApi.get<Home>(`/home?locale=en&populate=deep`),
+    baseApi.get<Home>(`/home?populate=deep`),
   ])
 
   return {
